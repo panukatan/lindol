@@ -3,6 +3,7 @@
 export(eq_build_url)
 export(eq_get_table)
 export(eq_process_table)
+importFrom(dplyr,bind_rows)
 importFrom(dplyr,mutate)
 importFrom(dplyr,relocate)
 importFrom(dplyr,rename_with)

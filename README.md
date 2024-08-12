@@ -10,7 +10,10 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-
+[![R-CMD-check.yaml](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml)
+[![test-coverage.yaml](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/panukatan/lindol/branch/main/graph/badge.svg)](https://app.codecov.io/gh/panukatan/lindol?branch=main)
 <!-- badges: end -->
 
 The [Philippine Institute of Volcanology and Seismology
