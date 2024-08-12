@@ -14,7 +14,7 @@
 #' @name lindol
 #' @importFrom httr config
 #' @importFrom rlang .data
-#' @importFrom dplyr mutate relocate rename_with
+#' @importFrom dplyr mutate relocate rename_with bind_rows
 #' @importFrom stringr str_to_title str_remove_all str_replace_all
 #' @importFrom rvest session html_table
 #'
