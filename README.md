@@ -14,6 +14,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![test-coverage.yaml](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/panukatan/lindol/branch/main/graph/badge.svg)](https://app.codecov.io/gh/panukatan/lindol?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/panukatan/lindol/badge)](https://www.codefactor.io/repository/github/panukatan/lindol)
+[![DOI](https://zenodo.org/badge/841075120.svg)](https://zenodo.org/badge/latestdoi/841075120)
 <!-- badges: end -->
 
 The [Philippine Institute of Volcanology and Seismology
