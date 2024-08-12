@@ -1,0 +1,64 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# lindol: An Interface to the PHIVOLCS Earthquake Bulletins
+
+<!-- badges: start -->
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+The [Philippine Institute of Volcanology and Seismology (PHIVOLCS)](https://phivolcs.dost.gov.ph/) maintains the National Earthquake Monitoring and Information which aims to provide accurate and timely information on significant earthquakes and tsunami events that may significantly impact the Philippines and ensures the accessibility and integrity of earthquake data. 
+
+This package provides an interface to this information with functions that harvest, process, and structure information from the frequent earthquake bulletins released by PHIVOLCS into machine-readable versions.
+
+The package name **lindol** (pronounced */linˈdol/ [lɪn̪ˈd̪ol]*) is the Tagalog word for earthquake.
+
+## What does `lindol` do?
+
+The `lindol` package provides functions that harvest, process, and structure information from the PHIVOLCS earthquake bulletins. Currently, `lindol` has functions for:
+
+1. Building URLs for archived and current webpages that contain real-time earthquake information;
+
+2. Extracting tabular data from webpages containing real-time earthquake information; and,
+
+3. Processing tabular data from webpages containing real-time earthquake information.
+
+## Installation
+
+`lindol` is not yet on CRAN but can be installed through the Panukatan R Universe with:
+
+```R
+install.packages(
+  "lindol",
+  repos = c("https://panukatan.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+## Usage
+
+## Citation
+
+If you find the `lindol` package useful please cite using the suggested citation provided by a call to the `citation()` function as follows:
+
+```{r citation}
+citation("lindol")
+```
+
+## Community guidelines
+
+Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/panukatan/lindol/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://panukatan.io/lindol/CONTRIBUTING.html).
+
+This project is released with a [Contributor Code of Conduct](https://panukatan.io/lindol/CODE_OF_CONDUCT.html). By participating in this project you agree to abide by its terms.
+

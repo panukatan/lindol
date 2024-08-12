@@ -1,0 +1,33 @@
+Package: lindol
+Type: Package
+Title: An Interface to the PHIVOLCS Earthquake Bulletins
+Version: 0.0.0.9000
+Authors@R: person(given = "Ernest", 
+                  family = "Guevarra", 
+                  comment = c(ORCID = "0000-0002-4887-4415"), 
+                  email = "ernest@guevarra.io", 
+                  role = c("aut", "cre"))
+Description: The Philippine Institute of Volcanology and Seismology (PHIVOLCS)
+  maintains the National Earthquake Monitoring and Information which aims to 
+  provide accurate and timely information on significant earthquakes and tsunami 
+  events that may significantly impact the Philippines and ensures the 
+  accessibility and integrity of earthquake data.  This package provides an 
+  interface to this information with functions that harvests, processes, and 
+  structures information from the frequent earthquake bulletins released by 
+  PHIVOLCS into machine-readable versions.
+License: GPL (>= 3)
+Imports: 
+    dplyr,
+    httr,
+    rlang,
+    rvest,
+    stringr
+Suggests: 
+    spelling
+Encoding: UTF-8
+Language: en-GB
+LazyData: true
+RoxygenNote: 7.3.1
+Roxygen: list(markdown = TRUE)
+URL: https://panukatan.io/lindol/, https://github.com/panukatan/lindol
+BugReports: https://github.com/panukatan/lindol/issues
