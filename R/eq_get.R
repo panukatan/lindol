@@ -14,7 +14,7 @@
 #'   retrieved? Only evaluated if `.year = NULL` and `.month = NULL`. If TRUE
 #'   (default), table of earthquake information for current year and current
 #'   month is retrieved. Otherwise, all months for all possible years are
-#'   retrieved
+#'   retrieved.
 #'
 #' @returns A list of tibble/s of raw earthquake information from PHIVOLCS.
 #'
