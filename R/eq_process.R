@@ -23,13 +23,18 @@ eq_process_table <- function(eq_data_list, simplify = TRUE) {
       x |>
         dplyr::rename_with(
           .fn = function(x) c(
-            "date_time_retrieved", "date_time", "longitude", "latitude",
+            "date_time_retrieved", "date_time",
+            "latitude", "longitude",
             "depth", "magnitude", "location"
           )
         ) |>
         dplyr::mutate(
           date_time = strptime(
             .data$date_time, format = "%d %B %Y - %I:%M %p", tz = "PST"
+          ),
+          dplyr::across(
+            .cols = .data$latitude:.data$magnitude,
+            .fns = ~as.numeric(.x)
           ),
           location = stringr::str_remove_all(
             string = .data$location, pattern = "\n\t\t "
