@@ -21,12 +21,15 @@
 
 eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
                          .year = NULL, .month = NULL) {
+  ## Get current year and month ----
+  current_year <- format(Sys.Date(), format = "%Y") |>
+    as.integer()
+
+  current_month <- format(Sys.Date(), format = "%B")
+
   ## Check if .year is NULL ----
   if (is.null(.year))
-    .year <- seq(
-      from = 2018, to = format(Sys.Date(), format = "%Y") |> as.integer(),
-      by = 1
-    )
+    .year <- seq(from = 2018, to = current_year, by = 1)
 
   ## Check that .year is not earlier than 2018 and not beyond current year ----
   if (all(as.integer(.year) < 2018)) {
@@ -87,10 +90,30 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
     unlist()
 
   ## Check if current month and year are included ----
-  if (
-    format(Sys.Date(), format = "%Y") %in% .year &
-    format(Sys.Date(), format = "%B") %in% .month
-  ) urls <- c(urls, .url)
+  if (current_year %in% .year & current_month %in% .month) {
+    ### Remove current month and later from urls ----
+    urls <- urls |>
+      (\(x)
+        {
+          y <- file.path(
+            paste0(
+              file.path(
+                paste0(.url, "EQLatest-Monthly"),
+                current_year
+              )
+            ),
+            paste0(
+              current_year, "_",
+              month.name[(1:12)[month.name == current_month]:12],
+              ".html"
+            )
+          )
+          x[!x %in% y]
+        }
+      )()
+
+    urls <- c(urls, .url)
+  }
 
   ## Return urls ----
   urls

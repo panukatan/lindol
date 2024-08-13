@@ -25,7 +25,7 @@ test_that("urls are as expected and formed properly", {
           format(Sys.Date(), "%Y"),
           paste0(
             format(Sys.Date(), "%Y"), "_",
-            month.name[1:(1:12)[month.name == format(Sys.Date(), format = "%B")]],
+            month.name[1:((1:12)[month.name == format(Sys.Date(), format = "%B")] - 1)],
             ".html"
           )
         )
@@ -41,4 +41,5 @@ test_that("warnings and errors are appropriate", {
   expect_error(eq_build_url(.year = 2016:2017))
   expect_error(eq_build_url(.month = 13))
   expect_error(eq_build_url(.month = "Abril"))
+  expect_error(eq_build_url(.month = c("Abril", "May", "June")))
 })

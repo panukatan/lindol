@@ -50,7 +50,17 @@ eq_get_table <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
         rvest::html_table() |>
         (\(x)
           {
-            x[lapply(X = x, FUN = function(x) nrow(x) > 1) |> unlist()][[1]]
+            df <- x[lapply(X = x, FUN = function(x) nrow(x) > 1) |> unlist()][[1]] |>
+              dplyr::select(1:6)
+
+            if ("X1" %in% names(df)) {
+              df <- df |>
+                dplyr::filter(
+                  stringr::str_detect(string = .data$X1, pattern = "[0-9]{2}")
+                )
+            }
+
+            df
           }
         )() |>
         dplyr::mutate(
