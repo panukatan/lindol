@@ -43,7 +43,7 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
   }
 
   ## Check that .month values are appropriate ----
-  if (is.integer(.month) & all(is.integer(.month) > 12)) {
+  if (is.numeric(.month) & any(.month > 12)) {
     stop(
       "Specified month/s cannot be recognised. Please check and try again."
     )
