@@ -68,7 +68,7 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
   ## Check if .month is null ----
   if (is.null(.month)) .month <- month.name
 
-  if (is.integer(.month)) {
+  if (is.numeric(.month)) {
     .month <- month.name[.month]
   } else {
     .month <- stringr::str_to_title(.month)
