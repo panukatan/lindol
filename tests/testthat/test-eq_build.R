@@ -25,7 +25,7 @@ test_that("urls are as expected and formed properly", {
           format(Sys.Date(), "%Y"),
           paste0(
             format(Sys.Date(), "%Y"), "_",
-            month.name[1:(1:12)[month.name == format(Sys.Date(), format = "%B")]],
+            month.name[1:((1:12)[month.name == format(Sys.Date(), format = "%B")] - 1)],
             ".html"
           )
         )

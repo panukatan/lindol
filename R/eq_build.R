@@ -104,7 +104,7 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
             ),
             paste0(
               current_year, "_",
-              month.name[((1:12)[month.name == current_month] + 1):12],
+              month.name[(1:12)[month.name == current_month]:12],
               ".html"
             )
           )
