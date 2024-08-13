@@ -4,6 +4,7 @@ all_urls <- eq_build_url()
 
 test_that("url building function outputs correct class and type", {
   expect_type(all_urls, "character")
+  expect_type(eq_build_url(.month = 1:5), "character")
 })
 
 test_that("urls are as expected and formed properly", {
@@ -32,6 +33,10 @@ test_that("urls are as expected and formed properly", {
       )
     ) |>
       (\(x) c(x, "https://earthquake.phivolcs.dost.gov.ph/"))()
+  )
+  expect_contains(
+    eq_build_url(.year = 2020, .month = 12),
+    "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_December.html"
   )
 })
 
