@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# lindol: An Interface to the PHIVOLCS Earthquake Bulletins
+# lindol: An Interface to the PHIVOLCS Earthquake Bulletins <img src="man/figures/logo.png" width="200" align="right" />
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)

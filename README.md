@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# lindol: An Interface to the PHIVOLCS Earthquake Bulletins
+# lindol: An Interface to the PHIVOLCS Earthquake Bulletins <img src="man/figures/logo.png" width="200" align="right" />
 
 <!-- badges: start -->
 
