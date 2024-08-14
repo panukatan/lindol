@@ -22,9 +22,9 @@ navbar:
   type: light
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [website, mastodon, linkedin, github]
+    right: [mastodon, linkedin, github]
 
-  components:
+  #components:
     # intro:
     #   text: "Why bagyo?"
     #   href: articles/bagyo.html
