@@ -43,7 +43,7 @@ test_that("urls are as expected and formed properly", {
 test_that("warnings and errors are appropriate", {
   expect_warning(eq_build_url(.year = 2016:2020))
   expect_error(eq_build_url(.year = 2016))
-  expect_error(eq_build_url(.year = 2016:2017))
+  expect_error(eq_build_url(.year = 2015:2016))
   expect_error(eq_build_url(.month = 13))
   expect_error(eq_build_url(.month = "Abril"))
   expect_error(eq_build_url(.month = c("Abril", "May", "June")))

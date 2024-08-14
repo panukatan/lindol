@@ -19,6 +19,7 @@ Useful links:
 \itemize{
   \item \url{https://panukatan.io/lindol/}
   \item \url{https://github.com/panukatan/lindol}
+  \item \url{http://panukatan.io/lindol/}
   \item Report bugs at \url{https://github.com/panukatan/lindol/issues}
 }
 
