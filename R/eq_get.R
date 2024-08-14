@@ -64,7 +64,7 @@ eq_get_table <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
           }
         )() |>
         dplyr::mutate(
-          dplyr::across(.fns = ~as.character(.x)),
+          dplyr::across(.cols = dplyr::everything(), .fns = ~as.character(.x)),
           date_time_retrieved = Sys.time(), .before = 1
         )
     }
