@@ -1,0 +1,63 @@
+title: lindol
+
+url: https://panukatan.io/lindol/
+
+development:
+  mode: auto
+
+template:
+  bootstrap: 5
+  bootswatch: cosmo
+  theme: haddock
+  params:
+    ganalytics:
+
+home:
+  links:
+  - text: Read more about the PHIVOLCS National Earthquake Monitoring and Information
+    href: https://www.phivolcs.dost.gov.ph/index.php/earthquake/earthquake-monitoring
+
+navbar:
+  bg: info
+  type: light
+  structure:
+    left:  [home, intro, reference, articles, news]
+    right: [website, mastodon, linkedin, github]
+
+  components:
+    # intro:
+    #   text: "Why bagyo?"
+    #   href: articles/bagyo.html
+    # articles:
+    #   text: Articles
+    #   menu:
+    #   - text: "Data Wrangling and Visualisation"
+    #     href: articles/visualisation.html
+    # website:
+    #   icon: "fa-regular fa-globe fa-lg"
+    #   href: https://ernest.guevarra.io
+    # mastodon:
+    #   icon: "fab fa-mastodon fa-lg"
+    #   href: https://fosstodon.org/@ernestguevarra
+    # linkedin:
+    #   icon: "fab fa-linkedin fa-lg"
+    #   href: https://www.linkedin.com/in/ernestguevarra
+
+
+reference:
+  - title: Build
+    contents:
+    - eq_build_url
+
+  - title: Get
+    contents:
+    - eq_get_table
+
+  - title: Process
+    contents:
+    - eq_process_table
+
+  - title: Data
+    contents:
+    - eq_data
+
