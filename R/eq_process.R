@@ -34,12 +34,13 @@ eq_process_table <- function(eq_data_list, simplify = TRUE) {
           ),
           dplyr::across(
             .cols = .data$latitude:.data$magnitude,
-            .fns = ~as.numeric(.x)
+            .fns = ~suppressWarnings(as.numeric(.x))
           ),
           location = stringr::str_remove_all(
-            string = .data$location, pattern = "\n\t\t "
+            string = .data$location, pattern = "\n\t\t\\s+|\r|\n\\s+"
           ) |>
-            stringr::str_replace_all(pattern = "^0+", replacement = "")
+            stringr::str_replace_all(pattern = "^0+", replacement = "") |>
+            stringr::str_replace_all(pattern = "km| km", replacement = " km")
         )
     }
   )
