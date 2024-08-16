@@ -50,7 +50,7 @@ structure information from the PHIVOLCS earthquake bulletins. Currently,
 
 ## Installation
 
-`lindol` is not yet on CRAN but can be installed through the Panukatan R
+`lindol` is not yet on CRAN but can be installed through the panukatan R
 Universe with:
 
 ``` r
@@ -61,6 +61,88 @@ install.packages(
 ```
 
 ## Usage
+
+The main usage of `lindol` is to retrieve earthquake monitoring data
+from PHIVOLCS’s earthquake bulletins. The main function is `eq_data()`
+and can be used as follows:
+
+``` r
+## Load the package ----
+library(lindol)
+
+## Get the current year and current month data ----
+eq_data()
+```
+
+which provides a tibble output as follows:
+
+    #> # A tibble: 1,247 × 7
+    #>    date_time_retrieved date_time           latitude longitude depth magnitude
+    #>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
+    #>  1 2024-08-16 06:53:56 2024-08-16 13:25:00     7.83      127.    27       2.4
+    #>  2 2024-08-16 06:53:56 2024-08-16 12:28:00     6.38      124.    19       2.2
+    #>  3 2024-08-16 06:53:56 2024-08-16 10:40:00    12.8       125.    19       2.6
+    #>  4 2024-08-16 06:53:56 2024-08-16 10:31:00    10.0       126.    88       4.1
+    #>  5 2024-08-16 06:53:56 2024-08-16 10:09:00     8.67      126.    30       2.3
+    #>  6 2024-08-16 06:53:56 2024-08-16 09:53:00    15.0       120.    10       3  
+    #>  7 2024-08-16 06:53:56 2024-08-16 09:02:00    19.6       121.     1       2.9
+    #>  8 2024-08-16 06:53:56 2024-08-16 08:20:00    13.2       120.    27       3.7
+    #>  9 2024-08-16 06:53:56 2024-08-16 07:48:00    12.2       125.    44       1.7
+    #> 10 2024-08-16 06:53:56 2024-08-16 07:32:00    14.0       120.    22       2.2
+    #> # ℹ 1,237 more rows
+    #> # ℹ 1 more variable: location <chr>
+
+The output has 7 fields:
+
+  - `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`)
+    the data has been retrieved from the PHIVOLCS earthquake monitoring
+    bulletins. This is basically a time stamp on when the user made a
+    call to `eq_data()`;
+
+  - `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the
+    specific earthquake was detected and recorded. This is recorded in
+    Philippine Standard Time (PST);
+
+  - `longitude` - Longitude (in GPS units/decimal format) coordinate of
+    the hypocentre of the detected earthquake;
+
+  - `latitude` - Latitude (in GPS units/decimal format) coordinate of
+    the hypocentre of the detected earthquake;
+
+  - `depth` - Depth (in kilometres units) of the hypocentre of the
+    detected earthquake;
+
+  - `magnitude` - Magnitude of the earthquake; and,
+
+  - `location` - Location of the earthquake in relation to a monitoring
+    station.
+
+The default implementation of the `eq_data()` function outputs
+earthquake monitoring data for the current month of the current year. If
+data for a specific year is needed, say for example for year 2020, then:
+
+``` r
+## Retrieve data for all months of year 2020 ----
+eq_data(.year = 2020)
+```
+
+which gives:
+
+    #> # A tibble: 14,047 × 7
+    #>    date_time_retrieved date_time           latitude longitude depth magnitude
+    #>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
+    #>  1 2024-08-16 06:53:57 2020-01-31 23:50:00     6.56      125.    12       2.2
+    #>  2 2024-08-16 06:53:57 2020-01-31 23:46:00     6.58      125.     9       2.1
+    #>  3 2024-08-16 06:53:57 2020-01-31 23:02:00     8.59      127.    13       3.2
+    #>  4 2024-08-16 06:53:57 2020-01-31 22:34:00     6.62      125.    13       3.6
+    #>  5 2024-08-16 06:53:57 2020-01-31 21:18:00     6.57      125.    16       2.8
+    #>  6 2024-08-16 06:53:57 2020-01-31 21:17:00    10.2       126.    18       2.9
+    #>  7 2024-08-16 06:53:57 2020-01-31 19:35:00     6.58      125.    17       3.1
+    #>  8 2024-08-16 06:53:57 2020-01-31 19:18:00     6.59      125.    13       4.9
+    #>  9 2024-08-16 06:53:57 2020-01-31 17:46:00    10.5       126.     3       3.5
+    #> 10 2024-08-16 06:53:57 2020-01-31 15:42:00     5.22      126.    37       3.1
+    #> # ℹ 14,037 more rows
+    #> # ℹ 1 more variable: location <chr>
 
 ## Citation
 

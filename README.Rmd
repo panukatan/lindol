@@ -6,6 +6,8 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
@@ -43,7 +45,7 @@ The `lindol` package provides functions that harvest, process, and structure inf
 
 ## Installation
 
-`lindol` is not yet on CRAN but can be installed through the Panukatan R Universe with:
+`lindol` is not yet on CRAN but can be installed through the panukatan R Universe with:
 
 ```R
 install.packages(
@@ -52,6 +54,56 @@ install.packages(
 )
 ```
 ## Usage
+
+The main usage of `lindol` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins. The main function is `eq_data()` and can be used as follows:
+
+```{r usage-1a, eval = FALSE}
+## Load the package ----
+library(lindol)
+
+## Get the current year and current month data ----
+eq_data()
+```
+
+which provides a tibble output as follows:
+
+```{r usage-1b, echo = FALSE}
+## Load the package ----
+library(lindol)
+
+## Get the current year and current month data ----
+eq_data()
+```
+
+The output has 7 fields:
+
+* `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`) the data has been retrieved from the PHIVOLCS earthquake monitoring bulletins. This is basically a time stamp on when the user made a call to `eq_data()`;
+
+* `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);
+
+* `longitude` - Longitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;
+
+* `latitude` - Latitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;
+
+* `depth` - Depth (in kilometres units) of the hypocentre of the detected earthquake;
+
+* `magnitude` - Magnitude of the earthquake; and,
+
+* `location` - Location of the earthquake in relation to a monitoring station.
+
+The default implementation of the `eq_data()` function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:
+
+```{r, usage-2a, eval = FALSE}
+## Retrieve data for all months of year 2020 ----
+eq_data(.year = 2020)
+```
+
+which gives:
+
+```{r, usage-2b, echo = FALSE}
+## Retrieve data for all months of year 2020 ----
+eq_data(.year = 2020)
+```
 
 ## Citation
 
