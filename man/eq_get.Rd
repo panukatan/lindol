@@ -49,6 +49,6 @@ Get earthquake monitoring information from PHIVOLCS earthquake bulletin HTMLs
 }
 \examples{
 eq_get_table()
-eq_get_links(.year = 2018)
+eq_get_links()
 
 }

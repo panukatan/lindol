@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' eq_get_table()
-#' eq_get_links(.year = 2018)
+#' eq_get_links()
 #'
 #' @rdname eq_get
 #' @export
@@ -154,16 +154,16 @@ eq_get_links <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
     (\(x)
       {
         paste(
-          stringr::str_extract_all(
-            string = x, pattern = paste(month.name, collapse = "|"),
-            simplify = TRUE
+          stringr::str_extract(
+            string = x, pattern = paste(month.name, collapse = "|")
           ),
           stringr::str_extract(
             string = x, pattern = "[0-9]{4}"
           )
         )
       }
-    )()
+    )() |>
+    (\(x)ifelse(x == "NA NA", format(Sys.Date(), format = "%B %Y"), x))()
 
   names(url_list) <- url_list_names
 
