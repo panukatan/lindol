@@ -1,5 +1,5 @@
 #'
-#' Get earthquake information tables from PHIVOLCS earthquake bulletins
+#' Get earthquake monitoring information from PHIVOLCS earthquake bulletin HTMLs
 #'
 #' @param .url Base URL for PHIVOLCS earthquake bulletins.
 #' @param .year A vector for year (in YYYY format) for which earthquake
@@ -20,6 +20,7 @@
 #'
 #' @examples
 #' eq_get_table()
+#' eq_get_links()
 #'
 #' @rdname eq_get
 #' @export
@@ -69,4 +70,102 @@ eq_get_table <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
         )
     }
   )
+}
+
+#'
+#' @rdname eq_get
+#' @export
+#'
+
+eq_get_links_ <- function(.url) {
+  ## Detect year and month from URL ----
+  .year <- stringr::str_extract(string = .url, pattern = "[0-9]{4}") |>
+    as.integer()
+  .month <- stringr::str_extract(
+    string = .url, pattern = paste(month.name, collapse = "|")
+  )
+
+  ## Quiet down error on SSL ----
+  httr::config(ssl_verifypeer = 0L) |>
+    httr::set_config()
+
+  ## Retrieve links ----
+  if (.year == 2018 & .month %in% month.name[seq_len(5)]) {
+    rvest::session(.url) |>
+      rvest::html_elements(css = "tr td .auto-style49 a") |>
+      rvest::html_attr(name = "href") |>
+      (\(x)
+       {
+         file.path(
+           "https:/",
+           stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
+           stringr::str_remove_all(string = x, pattern = "^../../")
+         )
+      }
+      )()
+  } else {
+    rvest::session(.url) |>
+      rvest::html_elements(css = ".auto-style91 a") |>
+      rvest::html_attr(name = "href") |>
+      (\(x)
+       {
+         file.path(
+           "https:/",
+           stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
+           stringr::str_remove_all(
+             string = x, pattern = "^../../|\\\\..\\\\..\\\\"
+            ) |>
+             stringr::str_replace_all(pattern = "\\\\", replacement = "/")
+         )
+      }
+      )()
+  }
+}
+
+#'
+#' @rdname eq_get
+#' @export
+#'
+
+eq_get_links <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
+                         .year = NULL, .month = NULL, latest = TRUE) {
+  ## Build URLs ----
+  if (is.null(.year) & is.null(.month)) {
+    if (latest) {
+      urls <- .url
+    } else {
+      urls <- eq_build_url(.url = .url, .year = .year, .month = .month)
+    }
+  } else {
+    urls <- eq_build_url(.url = .url, .year = .year, .month = .month)
+  }
+
+  ## Quiet down error on SSL ----
+  httr::config(ssl_verifypeer = 0L) |>
+    httr::set_config()
+
+  ## Retrieve and structure data ----
+  url_list <- lapply(
+    X = urls,
+    FUN = eq_get_links_
+  )
+
+  url_list_names <- urls |>
+    (\(x)
+      {
+        paste(
+          stringr::str_extract(
+            string = x, pattern = paste(month.name, collapse = "|")
+          ),
+          stringr::str_extract(
+            string = x, pattern = "[0-9]{4}"
+          )
+        )
+      }
+    )() |>
+    (\(x)ifelse(x == "NA NA", format(Sys.Date(), format = "%B %Y"), x))()
+
+  names(url_list) <- url_list_names
+
+  url_list
 }
