@@ -34,7 +34,13 @@ eq_get_bulletin <- function(.url) {
           expect_aftershocks = x[11, 6],
           date_time_issued = x[11, 8],
           prepared_by = x[11, 10]
-        )
+        ) |>
+          dplyr::mutate(
+            dplyr::across(
+              .cols = dplyr::everything(),
+              .fns = ~simplify_vectors(.x)
+            )
+          )
       }
     )()
 }
