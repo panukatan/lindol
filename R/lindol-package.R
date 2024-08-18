@@ -17,5 +17,6 @@
 #' @importFrom dplyr mutate relocate rename_with bind_rows select everything
 #' @importFrom stringr str_to_title str_remove_all str_replace_all str_detect
 #' @importFrom rvest session html_table
+#' @importFrom tibble tibble
 #'
 "_PACKAGE"

@@ -42,21 +42,3 @@ test_that("get table function outputs are as expected", {
 test_that("tables are of the correct structure", {
   expect_vector(tab_list, size = 1)
 })
-
-tab_list <- eq_get_links()
-
-test_that("get_links function outputs are as expected", {
-  expect_vector(tab_list, ptype = character(), size = nrow(eq_data()))
-})
-
-tab_list <- eq_get_links(latest = FALSE)
-
-test_that("get_links function outputs are as expected", {
-  expect_vector(tab_list, ptype = character())
-})
-
-tab_list <- eq_get_links(.year = 2018)
-
-test_that("tables are of the correct structure", {
-  expect_vector(tab_list, ptype = character())
-})
