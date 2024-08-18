@@ -145,27 +145,33 @@ eq_get_links <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
     httr::set_config()
 
   ## Retrieve and structure data ----
-  url_list <- lapply(
+  lapply(
     X = urls,
     FUN = eq_get_links_
-  )
+  ) |>
+    unlist()
 
-  url_list_names <- urls |>
-    (\(x)
-      {
-        paste(
-          stringr::str_extract(
-            string = x, pattern = paste(month.name, collapse = "|")
-          ),
-          stringr::str_extract(
-            string = x, pattern = "[0-9]{4}"
-          )
-        )
-      }
-    )() |>
-    (\(x)ifelse(x == "NA NA", format(Sys.Date(), format = "%B %Y"), x))()
-
-  names(url_list) <- url_list_names
-
-  url_list
+  # url_list_names <- urls |>
+  #   (\(x)
+  #     {
+  #       paste(
+  #         stringr::str_extract(
+  #           string = x, pattern = paste(month.name, collapse = "|")
+  #         ),
+  #         stringr::str_extract(
+  #           string = x, pattern = "[0-9]{4}"
+  #         )
+  #       )
+  #     }
+  #   )() |>
+  #   (\(x)ifelse(x == "NA NA", format(Sys.Date(), format = "%B %Y"), x))()
+  #
+  # names(url_list) <- url_list_names
+  #
+  # url_list
 }
+
+#'
+#' @rdname eq_get
+#' @export
+#'
