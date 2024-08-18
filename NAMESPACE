@@ -2,6 +2,8 @@
 
 export(eq_build_url)
 export(eq_data)
+export(eq_get_links)
+export(eq_get_links_)
 export(eq_get_table)
 export(eq_process_table)
 importFrom(dplyr,bind_rows)

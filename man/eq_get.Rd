@@ -2,9 +2,20 @@
 % Please edit documentation in R/eq_get.R
 \name{eq_get_table}
 \alias{eq_get_table}
-\title{Get earthquake information tables from PHIVOLCS earthquake bulletins}
+\alias{eq_get_links_}
+\alias{eq_get_links}
+\title{Get earthquake monitoring information from PHIVOLCS earthquake bulletin HTMLs}
 \usage{
 eq_get_table(
+  .url = "https://earthquake.phivolcs.dost.gov.ph/",
+  .year = NULL,
+  .month = NULL,
+  latest = TRUE
+)
+
+eq_get_links_(.url)
+
+eq_get_links(
   .url = "https://earthquake.phivolcs.dost.gov.ph/",
   .year = NULL,
   .month = NULL,
@@ -34,9 +45,10 @@ retrieved.}
 A list of tibble/s of raw earthquake information from PHIVOLCS.
 }
 \description{
-Get earthquake information tables from PHIVOLCS earthquake bulletins
+Get earthquake monitoring information from PHIVOLCS earthquake bulletin HTMLs
 }
 \examples{
 eq_get_table()
+eq_get_links(.year = 2018)
 
 }
