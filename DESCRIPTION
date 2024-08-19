@@ -21,7 +21,8 @@ Imports:
     httr,
     rlang,
     rvest,
-    stringr
+    stringr,
+    tibble
 Suggests: 
     spelling,
     testthat (>= 3.0.0)
