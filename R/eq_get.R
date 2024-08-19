@@ -19,13 +19,13 @@
 #' @returns A list of tibble/s of raw earthquake information from PHIVOLCS.
 #'
 #' @examples
-#' eq_get_table()
+#' eq_get_tables()
 #'
-#' @rdname eq_get
+#' @rdname eq_get_table
 #' @export
 #'
 
-eq_get_table <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
+eq_get_tables <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
                          .year = NULL, .month = NULL, latest = TRUE) {
   ## Build URLs ----
   if (is.null(.year) & is.null(.month)) {
@@ -45,28 +45,42 @@ eq_get_table <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
   ## Retrieve and structure data ----
   lapply(
     X = urls,
-    FUN = function(x) {
-      rvest::session(x) |>
-        rvest::html_table() |>
-        (\(x)
-          {
-            df <- x[lapply(X = x, FUN = function(x) nrow(x) > 1) |> unlist()][[1]] |>
-              dplyr::select(1:6)
-
-            if ("X1" %in% names(df)) {
-              df <- df |>
-                dplyr::filter(
-                  stringr::str_detect(string = .data$X1, pattern = "[0-9]{2}")
-                )
-            }
-
-            df
-          }
-        )() |>
-        dplyr::mutate(
-          dplyr::across(.cols = dplyr::everything(), .fns = ~as.character(.x)),
-          date_time_retrieved = Sys.time(), .before = 1
-        )
-    }
+    FUN = eq_get_table
   )
+}
+
+#'
+#' @rdname eq_get_table
+#' @export
+#'
+
+eq_get_table <- function(.url) {
+  ## Check URL ----
+  url_error <- httr::http_error(.url)
+
+  if (url_error) {
+    NULL
+  } else {
+    rvest::session(.url) |>
+      rvest::html_table() |>
+      (\(x)
+        {
+          df <- x[lapply(X = x, FUN = function(x) nrow(x) > 1) |> unlist()][[1]] |>
+            dplyr::select(1:6)
+
+          if ("X1" %in% names(df)) {
+            df <- df |>
+              dplyr::filter(
+                stringr::str_detect(string = .data$X1, pattern = "[0-9]{2}")
+              )
+          }
+
+          df
+       }
+      )() |>
+      dplyr::mutate(
+        dplyr::across(.cols = dplyr::everything(), .fns = ~as.character(.x)),
+        date_time_retrieved = Sys.time(), .before = 1
+      )
+  }
 }
