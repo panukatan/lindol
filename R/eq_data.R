@@ -1,6 +1,7 @@
 #'
 #' Retrieve earthquake information data from PHIVOLCS bulletins
 #'
+#' @param .url Base URL for PHIVOLCS earthquake bulletins.
 #' @param .year A vector for year (in YYYY format) for which earthquake
 #'   bulletins are to be retrieved. The earliest year that can be specified is
 #'   2018. If set to NULL (default), all years starting from 2018 to present
@@ -14,21 +15,33 @@
 #'   (default), table of earthquake information for current year and current
 #'   month is retrieved. Otherwise, all months for all possible years are
 #'   retrieved.
-#' @param simplify Logical. Should output be simplified into a data.frame or
-#'   tibble? Default is TRUE. Otherwise, a list of processed tibbles of
-#'   earthquake monitoring data.
 #'
 #' @returns A tibble of processed earthquake data.
 #'
 #' @examples
-#' eq_data()
+#' eq_data_summary()
 #'
+#' @rdname eq_data
 #' @export
 #'
 
-eq_data <- function(.year = NULL, .month = NULL,
-                    latest = TRUE, simplify = TRUE) {
+eq_data_summary <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
+                            .year = NULL, .month = NULL, latest = TRUE) {
   ## Retrieve data tables and process ----
-  eq_get_table(.year = .year, .month = .month, latest = latest) |>
-    eq_process_table(simplify = simplify)
+  eq_get_table(.url = .url, .year = .year, .month = .month, latest = latest) |>
+    eq_process_table(simplify = TRUE)
+}
+
+#'
+#' @rdname eq_data
+#' @export
+#'
+
+eq_data_bulletin <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
+                             .year = NULL, .month = NULL, latest = TRUE) {
+  eq_get_bulletin_urls(
+    .url = .url, .year = .year, .month = .month, latest = latest
+  ) |>
+    eq_get_bulletins() |>
+    eq_process_bulletins()
 }

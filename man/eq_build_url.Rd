@@ -2,7 +2,7 @@
 % Please edit documentation in R/eq_build.R
 \name{eq_build_url}
 \alias{eq_build_url}
-\title{Build URLs for specific earthquake bulletins}
+\title{Build URLs for specific PHIVOLCS earthquake bulletin summaries}
 \usage{
 eq_build_url(
   .url = "https://earthquake.phivolcs.dost.gov.ph/",
@@ -11,7 +11,7 @@ eq_build_url(
 )
 }
 \arguments{
-\item{.url}{Base URL for PHIVOLCS earthquake bulletins.}
+\item{.url}{Base URL for PHIVOLCS earthquake bulletin summaries.}
 
 \item{.year}{A vector for year (in YYYY format) for which earthquake
 bulletins are to be retrieved. The earliest year that can be specified is
@@ -27,7 +27,7 @@ all months are used.}
 A vector of URLs based on given \code{.year} and \code{.month}
 }
 \description{
-Build URLs for specific earthquake bulletins
+Build URLs for specific PHIVOLCS earthquake bulletin summaries
 }
 \examples{
 eq_build_url()
