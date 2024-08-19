@@ -46,7 +46,7 @@ eq_get_bulletin <- function(.url) {
 }
 
 #'
-#' @rdname eq_get
+#' @rdname eq_get_bulletin
 #' @export
 #'
 

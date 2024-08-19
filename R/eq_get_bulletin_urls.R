@@ -22,7 +22,7 @@
 #' @examples
 #' eq_get_bulletin_urls()
 #'
-#' @rdname eq_get_bulletin
+#' @rdname eq_get_bulletin_urls
 #' @export
 #'
 
@@ -46,13 +46,17 @@ eq_get_bulletin_urls <- function(.url = "https://earthquake.phivolcs.dost.gov.ph
   ## Retrieve URLs ----
   lapply(
     X = urls,
-    FUN = eq_get_links_
+    FUN = eq_get_bulletin_urls_
   ) |>
     unlist()
 }
 
+#'
+#' @rdname eq_get_bulletin_urls
+#' @export
+#'
 
-eq_get_links_ <- function(.url) {
+eq_get_bulletin_urls_ <- function(.url) {
   ## Detect year and month from URL ----
   .year <- stringr::str_extract(string = .url, pattern = "[0-9]{4}") |>
     as.integer()

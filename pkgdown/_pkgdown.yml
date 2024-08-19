@@ -52,10 +52,13 @@ reference:
   - title: Get
     contents:
     - eq_get_table
+    - eq_get_bulletin_url
+    - eq_get_bulletin
 
   - title: Process
     contents:
     - eq_process_table
+    - eq_process_bulettin
 
   - title: Data
     contents:

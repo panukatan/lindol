@@ -15,7 +15,9 @@
 #' @importFrom httr config
 #' @importFrom rlang .data
 #' @importFrom dplyr mutate relocate rename_with bind_rows select everything
+#'   across
 #' @importFrom stringr str_to_title str_remove_all str_replace_all str_detect
+#'   str_remove str_replace
 #' @importFrom rvest session html_table
 #' @importFrom tibble tibble
 #'
