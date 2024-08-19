@@ -1,7 +1,7 @@
 # Tests for eq_process function ------------------------------------------------
 
-df <- eq_get_table() |>
-  eq_process_table()
+df <- eq_get_tables() |>
+  eq_process_tables()
 
 test_that("eq_process outputs are appropriate", {
   expect_s3_class(df, "tbl")
@@ -22,8 +22,8 @@ test_that("eq_process outputs are appropriate", {
 })
 
 
-df <- eq_get_table(.year = 2020) |>
-  eq_process_table()
+df <- eq_get_tables(.year = 2020) |>
+  eq_process_tables()
 
 test_that("eq_process outputs are appropriate", {
   expect_s3_class(df, "tbl")

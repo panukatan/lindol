@@ -28,8 +28,8 @@
 eq_data_summary <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
                             .year = NULL, .month = NULL, latest = TRUE) {
   ## Retrieve data tables and process ----
-  eq_get_table(.url = .url, .year = .year, .month = .month, latest = latest) |>
-    eq_process_table(simplify = TRUE)
+  eq_get_tables(.url = .url, .year = .year, .month = .month, latest = latest) |>
+    eq_process_tables()
 }
 
 #'
