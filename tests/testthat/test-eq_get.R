@@ -42,3 +42,10 @@ test_that("get table function outputs are as expected", {
 test_that("tables are of the correct structure", {
   expect_vector(tab_list, size = 1)
 })
+
+test_that("eq_get_table works as expected", {
+  expect_null(eq_get_table("https://earthquake.phivolcs.dost.gov.ph/test"))
+})
+
+
+
