@@ -62,5 +62,6 @@ reference:
 
   - title: Data
     contents:
-    - eq_data
+    - eq_data_summary
+    - eq_data_bulletin
 

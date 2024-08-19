@@ -68,22 +68,28 @@ eq_get_bulletin_urls_ <- function(.url) {
   httr::config(ssl_verifypeer = 0L) |>
     httr::set_config()
 
+  ## Initiate HTML session ----
+  .session <- rvest::session(.url)
+
   ## Retrieve links ----
   if (.year == 2018 & .month %in% month.name[seq_len(5)]) {
-    rvest::session(.url) |>
-      rvest::html_elements(css = "tr td .auto-style49 a") |>
+    .session |>
+      rvest::html_elements(css = "tr td a") |>
       rvest::html_attr(name = "href") |>
       (\(x)
-       {
-         file.path(
-           "https:/",
-           stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
-           stringr::str_remove_all(string = x, pattern = "^../../")
-         )
-      }
+        {
+          x <- x[stringr::str_detect(string = x, pattern = "Earthquake_Information")]
+          file.path(
+            "https:/",
+            stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
+            stringr::str_remove_all(
+              string = x, pattern = "^../../|^../../../../"
+            )
+          )
+        }
       )()
   } else {
-    rvest::session(.url) |>
+    .session |>
       rvest::html_elements(css = ".auto-style91 a") |>
       rvest::html_attr(name = "href") |>
       (\(x)
@@ -92,7 +98,7 @@ eq_get_bulletin_urls_ <- function(.url) {
            "https:/",
            stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
            stringr::str_remove_all(
-             string = x, pattern = "^../../|\\\\..\\\\..\\\\"
+             string = x, pattern = "\\.\\./|\\\\..\\\\..\\\\"
            ) |>
              stringr::str_replace_all(pattern = "\\\\", replacement = "/")
          )
