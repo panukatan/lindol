@@ -3,7 +3,7 @@
 url_list <- eq_get_bulletin_urls()
 
 test_that("get_links function outputs are as expected", {
-  expect_vector(url_list, ptype = character(), size = nrow(eq_data()))
+  expect_vector(url_list, ptype = character(), size = nrow(eq_data_summary()))
 })
 
 url_list <- eq_get_bulletin_urls(latest = FALSE)

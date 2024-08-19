@@ -33,3 +33,34 @@ get_location <- function(.location) {
 simplify_vectors <- function(x) {
   c(x) |> unname() |> unlist()
 }
+
+
+## Retrieve HTML information from different CSS tags ----
+
+# get_links <- function(.session) {
+#   c(
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style37 a") |>
+#       rvest::html_attr(name = "href"),
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style62 a") |>
+#       rvest::html_attr(name = "href"),
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style57 a") |>
+#       rvest::html_attr(name = "href")
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style37 a") |>
+#       rvest::html_attr(name = "href")
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style12 a") |>
+#       rvest::html_attr(name = "href")
+#     .session |>
+#       rvest::html_elements(css = "tr td a") |>
+#       rvest::html_attr(name = "href") |>
+#       (\(x) x[stringr::str_detect(x, pattern = "Earthquake_Information")])()
+#
+#     .session |>
+#       rvest::html_elements(css = "tr td .auto-style49 a") |>
+#       rvest::html_attr(name = "href")
+#   )
+# }

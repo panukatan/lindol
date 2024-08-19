@@ -1,7 +1,7 @@
 #'
-#' Build URLs for specific earthquake bulletins
+#' Build URLs for specific PHIVOLCS earthquake bulletin summaries
 #'
-#' @param .url Base URL for PHIVOLCS earthquake bulletins.
+#' @param .url Base URL for PHIVOLCS earthquake bulletin summaries.
 #' @param .year A vector for year (in YYYY format) for which earthquake
 #'   bulletins are to be retrieved. The earliest year that can be specified is
 #'   2018. If set to NULL (default), all years starting from 2018 to present

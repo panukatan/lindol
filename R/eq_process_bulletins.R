@@ -26,8 +26,12 @@ eq_process_bulletins <- function(eq_df) {
       longitude = get_longitude(.data$location),
       latitude = get_latitude(.data$location),
       depth = as.integer(.data$depth),
+      magnitude_type = stringr::str_extract_all(
+        string = .data$magnitude, pattern = "[A-Za-z]{1,}", simplify = TRUE
+      ) |>
+        simplify_vectors(),
       magnitude = stringr::str_remove_all(
-        string = .data$magnitude, pattern = "Ms "
+        string = .data$magnitude, pattern = "[^0-9.-]"
       ) |>
         as.numeric(),
       location = get_location(.data$location),
@@ -43,7 +47,8 @@ eq_process_bulletins <- function(eq_df) {
     ) |>
     dplyr::select(
       .data$date_time, .data$bulletin_number, .data$longitude, .data$latitude,
-      .data$depth, .data$magnitude, .data$reported_intensity, .data$location,
+      .data$depth, .data$magnitude, .data$magnitude_type,
+      .data$reported_intensity, .data$location,
       .data$origin, .data$expect_damage, .data$expect_aftershocks,
       .data$date_time_issued, .data$prepared_by
     )
