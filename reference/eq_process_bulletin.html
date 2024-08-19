@@ -58,19 +58,15 @@ bulletins.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">urls</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_get_bulletin_urls.html">eq_get_bulletin_urls</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="eq_get_bulletin.html">eq_get_bulletins</a></span><span class="op">(</span><span class="va">urls</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">eq_process_bulletins</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>There was 1 warning in `dplyr::mutate()`.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> In argument: `magnitude = as.numeric(...)`.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Caused by warning:</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> NAs introduced by coercion</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 14</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   date_time           bulletin_number longitude latitude depth magnitude</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2024-08-19 <span style="color: #949494;">12:01:59</span>               1     12.8      125.     5        <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2024-08-19 <span style="color: #949494;">11:57:04</span>               1     12.8      125.    10        <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2024-08-19 <span style="color: #949494;">11:50:18</span>               1      9.56     122.    26         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: reported_intensity &lt;chr&gt;, location &lt;chr&gt;, origin &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   expect_damage &lt;chr&gt;, expect_aftershocks &lt;chr&gt;, date_time_issued &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   prepared_by &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2024-08-19 <span style="color: #949494;">14:09:51</span>               1     10.0      126.     2       2.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2024-08-19 <span style="color: #949494;">13:45:12</span>               1      7.73     128.     3       3.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2024-08-19 <span style="color: #949494;">13:43:48</span>               1      7.92     127.     1       3.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: magnitude_type &lt;chr&gt;, reported_intensity &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   location &lt;chr&gt;, origin &lt;chr&gt;, expect_damage &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   expect_aftershocks &lt;chr&gt;, date_time_issued &lt;dttm&gt;, prepared_by &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
