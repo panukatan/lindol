@@ -24,3 +24,7 @@
 #' @importFrom foreach foreach %dopar%
 #'
 "_PACKAGE"
+
+
+## quiets concerns of R CMD check regarding global variables ----
+if(getRversion() >= "2.15.1")  utils::globalVariables("i")

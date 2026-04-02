@@ -15,6 +15,8 @@
 #'   (default), table of earthquake information for current year and current
 #'   month is retrieved. Otherwise, all months for all possible years are
 #'   retrieved.
+#' @param parallel Logical. Should the function use parallelisation? Default to
+#'   FALSE.
 #' @param cores The number of computer cores to use or number of child processes
 #'   to be run simultaneously. Default to one less than the available number of
 #'   cores on current machine.
