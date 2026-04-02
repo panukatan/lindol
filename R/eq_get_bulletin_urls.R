@@ -39,10 +39,6 @@ eq_get_bulletin_urls <- function(.url = "https://earthquake.phivolcs.dost.gov.ph
     urls <- eq_build_url(.url = .url, .year = .year, .month = .month)
   }
 
-  ## Quiet down error on SSL ----
-  httr::config(ssl_verifypeer = 0L) |>
-    httr::set_config()
-
   ## Retrieve URLs ----
   lapply(
     X = urls,
@@ -93,16 +89,17 @@ eq_get_bulletin_urls_ <- function(.url) {
       rvest::html_elements(css = ".auto-style91 a") |>
       rvest::html_attr(name = "href") |>
       (\(x)
-       {
-         file.path(
-           "https:/",
-           stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
-           stringr::str_remove_all(
-             string = x, pattern = "\\.\\./|\\\\..\\\\..\\\\"
-           ) |>
-             stringr::str_replace_all(pattern = "\\\\", replacement = "/")
-         )
-      }
+        {
+          file.path(
+            "https:/",
+            stringr::str_split_fixed(.url, pattern = "/", n = 4)[ , 3],
+            stringr::str_remove_all(
+              string = x, pattern = "\\.\\./|\\\\..\\\\..\\\\"
+            ) |>
+              stringr::str_replace_all(pattern = "\\\\", replacement = "/")
+          )
+        }
       )()
   }
 }
+

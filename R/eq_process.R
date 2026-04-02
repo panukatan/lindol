@@ -44,7 +44,7 @@ eq_process_table <- function(eq_data_list) {
           .data$date_time, format = "%d %B %Y - %I:%M %p", tz = "PST"
         ),
         dplyr::across(
-          .cols = .data$latitude:.data$magnitude,
+          .cols = "latitude":"magnitude",
           .fns = ~suppressWarnings(as.numeric(.x))
         ),
         location = stringr::str_remove_all(

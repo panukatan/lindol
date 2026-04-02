@@ -27,6 +27,33 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
 
   current_month <- format(Sys.Date(), format = "%B")
 
+  ## Quiet down error on SSL ----
+  httr::config(ssl_verifypeer = 0L) |>
+    httr::set_config()
+
+  .session <- rvest::session(url = .url)
+
+  url_list <- rvest::read_html(.session) |>
+    rvest::html_elements(css = ".auto-style94 .MsoNormalTable .auto-style96 a") |>
+    rvest::html_attr(name = "href")
+
+  latest_archive_url <- url_list |>
+    grepv(pattern = "[0-9]{4}") |>
+    basename() |>
+    sub(pattern = ".html", replacement = "") |>
+    sub(pattern = "_", replacement = " ") |>
+    paste("01") |>
+    as.Date(format = "%Y %B %d") |>
+    (\(x) which(x = x == max(x)))() |>
+    (\(x) url_list[x])()
+
+  latest_month <- basename(latest_archive_url) |>
+    stringr::str_extract(pattern = month.name) |>
+    (\(x) x[!is.na(x)])()
+
+  latest_year <- basename(latest_archive_url) |>
+    stringr::str_extract(pattern = "[0-9]{4}")
+
   ## Check if .year is NULL ----
   if (is.null(.year))
     .year <- seq(from = 2018, to = current_year, by = 1)
@@ -111,6 +138,11 @@ eq_build_url <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
           x[!x %in% y]
         }
       )()
+    
+    ## Check if built URL for latest month and year are available from website ----
+    if (current_month != latest_month) {
+      urls <- urls[seq_len(which(grepl(pattern = paste0(latest_year, "_", latest_month), x = urls)))]
+    }
 
     urls <- c(urls, .url)
   }

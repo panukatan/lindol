@@ -4,7 +4,7 @@
 #' The Philippine Institute of Volcanology and Seismology (PHIVOLCS)
 #' maintains the National Earthquake Monitoring and Information which aims to
 #' provide accurate and timely information on significant earthquakes and
-#' tsunami events that may significantlly impact the Philippines and ensures the
+#' tsunami events that may significantly impact the Philippines and ensures the
 #' accessibility and integrity of earthquake data. This package provides an
 #' interface to this dataset through the frequent earthquake bulletins released
 #' by PHIVOLCS.
@@ -20,5 +20,7 @@
 #'   str_remove str_replace
 #' @importFrom rvest session html_table
 #' @importFrom tibble tibble
+#' @importFrom doParallel registerDoParallel
+#' @importFrom foreach foreach %dopar%
 #'
 "_PACKAGE"

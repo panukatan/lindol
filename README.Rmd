@@ -20,32 +20,38 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check.yaml](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/R-CMD-check.yaml)
 [![test-coverage.yaml](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/panukatan/lindol/actions/workflows/test-coverage.yaml)
-[![Codecov test coverage](https://codecov.io/gh/panukatan/lindol/branch/main/graph/badge.svg)](https://app.codecov.io/gh/panukatan/lindol?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/panukatan/lindol/graph/badge.svg)](https://app.codecov.io/gh/panukatan/lindol)
 [![CodeFactor](https://www.codefactor.io/repository/github/panukatan/lindol/badge)](https://www.codefactor.io/repository/github/panukatan/lindol)
 [![DOI](https://zenodo.org/badge/841075120.svg)](https://zenodo.org/badge/latestdoi/841075120)
 <!-- badges: end -->
 
-The [Philippine Institute of Volcanology and Seismology (PHIVOLCS)](https://phivolcs.dost.gov.ph/) maintains the National Earthquake Monitoring and Information which aims to provide accurate and timely information on significant earthquakes and tsunami events that may significantly impact the Philippines and ensures the accessibility and integrity of earthquake data. 
+The [Philippine Institute of Volcanology and Seismology (PHIVOLCS)](https://phivolcs.dost.gov.ph/) maintains the [National Earthquake Monitoring and Information System](https://www.phivolcs.dost.gov.ph/earthquake-monitoring-system/) which aims to provide accurate and timely information on significant earthquakes and tsunami events that may significantly impact the Philippines and ensures the accessibility and integrity of earthquake data. 
 
 This package provides an interface to this information with functions that harvest, process, and structure information from the frequent earthquake bulletins released by PHIVOLCS into machine-readable versions.
 
 The package name **lindol** (pronounced */linˈdol/ [lɪn̪ˈd̪ol]*) is the Tagalog word for earthquake.
 
-## What does `lindol` do?
+## What does the package do?
 
-The `lindol` package provides functions that harvest, process, and structure information from the PHIVOLCS earthquake bulletins. Currently, `lindol` has functions for:
+The `{lindol}` package provides functions that harvest, process, and structure information from the PHIVOLCS earthquake bulletins. Currently, `{lindol}` has functions for:
 
-1. Building URLs for archived and current webpages that contain real-time earthquake information;
+1. Building URLs for webpages containing historical and real-time summary earthquake information;
 
-2. Extracting tabular data from webpages containing real-time earthquake information; and,
+2. Retrieving URLs for earthquake information bulletins containing historical and real-time detailed earthquake information;
 
-3. Processing tabular data from webpages containing real-time earthquake information.
+3. Extracting tabular data from webpages containing historical and real-time summary earthquake information;
+
+4. Extracting tabular data from earthquake information bulletin webpages containing historical and real-time detailed earthquake information;
+
+5. Processing tabular data from webpages containing historical and real-time summary earthquake information; and,
+
+6. Processing tabular data from earthquake information bulletin webpages containing historical and real-time detailed earthquake information.
 
 ## Installation
 
-`lindol` is not yet on CRAN but can be installed through the panukatan R Universe with:
+`{lindol}` is not yet on CRAN but can be installed through the [panukatan R Universe](https://panukatan.r-universe.dev) with:
 
 ```R
 install.packages(
@@ -55,14 +61,18 @@ install.packages(
 ```
 ## Usage
 
-The main usage of `lindol` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins. The main function is `eq_data()` and can be used as follows:
+The main usage of `{lindol}` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins. The main functions are `eq_data_summary()` and `eq_data_bulletin()` which outputs summary and detailed earthquake information respectively. This [vignette]() describes the structure of the PHIVOLCS earthquake information bulletin webpages and the difference between the summary and bulletin earthquake information. 
+
+### Summary earthquake information
+
+The `eq_data_summary()` outputs historical and current summary earthquake information. It can be used as follows:
 
 ```{r usage-1a, eval = FALSE}
 ## Load the package ----
 library(lindol)
 
 ## Get the current year and current month data ----
-eq_data()
+eq_data_summary()
 ```
 
 which provides a tibble output as follows:
@@ -72,7 +82,7 @@ which provides a tibble output as follows:
 library(lindol)
 
 ## Get the current year and current month data ----
-eq_data()
+eq_data_summary()
 ```
 
 The output has 7 fields:
@@ -95,19 +105,67 @@ The default implementation of the `eq_data()` function outputs earthquake monito
 
 ```{r, usage-2a, eval = FALSE}
 ## Retrieve data for all months of year 2020 ----
-eq_data(.year = 2020)
+eq_data_summary(.year = 2020)
 ```
 
 which gives:
 
 ```{r, usage-2b, echo = FALSE}
 ## Retrieve data for all months of year 2020 ----
-eq_data(.year = 2020)
+eq_data_summary(.year = 2020)
+```
+
+### Detailed earthquake information
+
+The `eq_data_bulletin()` outputs detailed historical and current earthquake information. It can be used as follows:
+
+```{r usage-bulletin-1a, eval = FALSE}
+## Get the current year and current month detailed data ----
+eq_data_bulletin(.year = 2018, .month = "January")
+```
+
+which provides a tibble output as follows:
+
+```{r usage-bulletin-1b, echo = FALSE}
+## Get the current year and current month data ----
+eq_data_bulletin(.year = 2018, .month = "January")
+```
+
+The output has 7 fields:
+
+* `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`) the data has been retrieved from the PHIVOLCS earthquake monitoring bulletins. This is basically a time stamp on when the user made a call to `eq_data()`;
+
+* `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);
+
+* `longitude` - Longitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;
+
+* `latitude` - Latitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;
+
+* `depth` - Depth (in kilometres units) of the hypocentre of the detected earthquake;
+
+* `magnitude` - Magnitude of the earthquake; and,
+
+* `location` - Location of the earthquake in relation to a monitoring station.
+
+The default implementation of the `eq_data_bulletin()` function outputs earthquake monitoring data for the current month of the current year. Also, the default behaviour is to perform this data extraction sequentially i.e., every earthquake record for the specified month and year combination one after the other. This approach can take long specifically for month and year combinations that have many recorded earthquakes. The `eq_data_bulletin()` function includes option for parallelisation of this process by specifying the argument `parallel = TRUE` which, by default, will initiate 2 parallel processes. This can be increased (depending on the specifications of the machine being used) by specifying the `cores` argument to the desired appropriate number of processes to initiate.
+
+For example, if data for a specific year is needed, say for example for year 2024, using parallelisation using 8 parallel processes, then:
+
+```{r, usage-bulletin-2a, eval = FALSE}
+## Retrieve data for all months of year 2024 using parallelisation ----
+eq_data_bulletin(.year = 2024, parallel = TRUE, cores = 8)
+```
+
+which gives:
+
+```{r, usage-bulletin-2b, eval = FALSE, echo = FALSE}
+## Retrieve data for all months of year 2024 ----
+eq_data_bulletin(.year = 2024, parallel = TRUE, cores = 8)
 ```
 
 ## Citation
 
-If you find the `lindol` package useful please cite using the suggested citation provided by a call to the `citation()` function as follows:
+If you use the `{lindol}` package in your work, please cite using the suggested citation provided by a call to the `citation()` function as follows:
 
 ```{r citation}
 citation("lindol")
