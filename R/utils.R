@@ -49,7 +49,7 @@ eq_get_bulletin_urls_archive <- function(.url) {
     rvest::html_attr(name = "href")
 
   latest_archive_url <- url_list |>
-    grepv(pattern = "[0-9]{4}") |>
+    grep(pattern = "[0-9]{4}", value = TRUE) |>
     basename() |>
     sub(pattern = ".html", replacement = "") |>
     sub(pattern = "_", replacement = " ") |>
