@@ -295,6 +295,7 @@ participating in this project you agree to abide by its terms.
   bulletin HTMLs
 - [`eq_get_bulletin_urls()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
   [`eq_get_bulletin_urls_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
+  [`eq_get_bulletin_url_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
   : Get PHIVOLCS earthquake information bulletins
 - [`eq_get_bulletin()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   [`eq_get_bulletins()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
