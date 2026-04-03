@@ -25,8 +25,15 @@ eq_get_bulletin <- function(.url) {
   } else {
     url_error <- httr::http_error(.url)
   }
+
+  ## Check if .url is html ----
+  if (grepl(pattern = ".html", x = .url)) {
+    html_error <- FALSE
+  } else {
+    html_error <- TRUE  
+  }
   
-  if (url_error) {
+  if (url_error | html_error) {
     NULL
   } else {
     rvest::session(url = .url) |>
