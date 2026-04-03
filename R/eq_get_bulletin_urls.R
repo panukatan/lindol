@@ -69,7 +69,7 @@ eq_get_bulletin_urls_ <- function(.url) {
 
   ## Retrieve links ----
   if (.year == 2018 & .month %in% month.name[seq_len(5)]) {
-    .session |>
+    eq_url <- .session |>
       rvest::html_elements(css = "tr td a") |>
       rvest::html_attr(name = "href") |>
       (\(x)
@@ -85,7 +85,7 @@ eq_get_bulletin_urls_ <- function(.url) {
         }
       )()
   } else {
-    .session |>
+    eq_url <- .session |>
       rvest::html_elements(css = ".auto-style91 a") |>
       rvest::html_attr(name = "href") |>
       (\(x)
@@ -101,5 +101,48 @@ eq_get_bulletin_urls_ <- function(.url) {
         }
       )()
   }
+
+  eq_url <- lapply(
+    X = eq_url,
+    FUN = eq_get_bulletin_url_
+  ) |>
+    unlist()
+
+  # base_url <- "https://earthquake.phivolcs.dost.gov.ph"
+
+  # ## Enforce standard base url ----
+  # eq_url <- ifelse(
+  #   dirname(dirname(dirname(eq_url))) != base_url,
+  #   sub(
+  #     pattern = dirname(dirname(dirname(eq_url))),
+  #     x = eq_url,
+  #     replacement = base_url
+  #   ),
+  #   eq_url
+  # )
+
+  eq_url
+}
+
+#'
+#' @rdname eq_get_bulletin_urls
+#' @export
+#'
+
+eq_get_bulletin_url_ <- function(.url) {
+  base_url <- "https://earthquake.phivolcs.dost.gov.ph"
+  
+  ## Enforce standard base url ----
+  eq_url <- ifelse(
+    dirname(dirname(dirname(.url))) != base_url,
+    sub(
+      pattern = dirname(dirname(dirname(.url))),
+      x = .url,
+      replacement = base_url
+    ),
+    .url
+  )
+
+  eq_url
 }
 
