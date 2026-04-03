@@ -98,20 +98,20 @@ eq_data_summary()
 
 which provides a tibble output as follows:
 
-    #> # A tibble: 1,329 × 7
+    #> # A tibble: 1,372 × 7
     #>    date_time_retrieved date_time           latitude longitude depth magnitude
     #>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
-    #>  1 2026-04-02 15:20:58 2026-04-02 21:43:00     7.64      125.    21       2.4
-    #>  2 2026-04-02 15:20:58 2026-04-02 21:09:00    18.0       120.    21       3.7
-    #>  3 2026-04-02 15:20:58 2026-04-02 20:27:00    12.8       123.     7       2.6
-    #>  4 2026-04-02 15:20:58 2026-04-02 18:37:00     8.51      127.    13       2.3
-    #>  5 2026-04-02 15:20:58 2026-04-02 17:22:00    11.8       125.    34       1.8
-    #>  6 2026-04-02 15:20:58 2026-04-02 15:58:00     6.06      126.   101       2.7
-    #>  7 2026-04-02 15:20:58 2026-04-02 15:40:00     9.76      126.    35       2.2
-    #>  8 2026-04-02 15:20:58 2026-04-02 15:25:00    10         122.     5       2.3
-    #>  9 2026-04-02 15:20:58 2026-04-02 14:31:00    15.0       122.     4       2.4
-    #> 10 2026-04-02 15:20:58 2026-04-02 12:59:00    18.0       121.    14       1.9
-    #> # ℹ 1,319 more rows
+    #>  1 2026-04-03 10:35:31 2026-04-03 16:28:00     7.18      125.    27       1.8
+    #>  2 2026-04-03 10:35:31 2026-04-03 15:58:00    16.1       122.    20       1.8
+    #>  3 2026-04-03 10:35:31 2026-04-03 15:29:00     6.45      127.    33       1.9
+    #>  4 2026-04-03 10:35:31 2026-04-03 14:51:00    13.8       121.    21       1.7
+    #>  5 2026-04-03 10:35:31 2026-04-03 14:27:00     9.8       126.    25       1.6
+    #>  6 2026-04-03 10:35:31 2026-04-03 14:23:00     6.13      125.    19       1.5
+    #>  7 2026-04-03 10:35:31 2026-04-03 13:58:00    15.6       120.    70       1.6
+    #>  8 2026-04-03 10:35:31 2026-04-03 13:38:00    13.5       121.    43       1.7
+    #>  9 2026-04-03 10:35:31 2026-04-03 12:53:00    11.1       124.    22       1.9
+    #> 10 2026-04-03 10:35:31 2026-04-03 12:11:00     6.87      127.    18       2.5
+    #> # ℹ 1,362 more rows
     #> # ℹ 1 more variable: location <chr>
 
 The output has 7 fields:
@@ -153,16 +153,16 @@ which gives:
     #> # A tibble: 14,047 × 7
     #>    date_time_retrieved date_time           latitude longitude depth magnitude
     #>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
-    #>  1 2026-04-02 15:21:01 2020-01-31 23:50:00     6.56      125.    12       2.2
-    #>  2 2026-04-02 15:21:01 2020-01-31 23:46:00     6.58      125.     9       2.1
-    #>  3 2026-04-02 15:21:01 2020-01-31 23:02:00     8.59      127.    13       3.2
-    #>  4 2026-04-02 15:21:01 2020-01-31 22:34:00     6.62      125.    13       3.6
-    #>  5 2026-04-02 15:21:01 2020-01-31 21:18:00     6.57      125.    16       2.8
-    #>  6 2026-04-02 15:21:01 2020-01-31 21:17:00    10.2       126.    18       2.9
-    #>  7 2026-04-02 15:21:01 2020-01-31 19:35:00     6.58      125.    17       3.1
-    #>  8 2026-04-02 15:21:01 2020-01-31 19:18:00     6.59      125.    13       4.9
-    #>  9 2026-04-02 15:21:01 2020-01-31 17:46:00    10.5       126.     3       3.5
-    #> 10 2026-04-02 15:21:01 2020-01-31 15:42:00     5.22      126.    37       3.1
+    #>  1 2026-04-03 10:35:32 2020-01-31 23:50:00     6.56      125.    12       2.2
+    #>  2 2026-04-03 10:35:32 2020-01-31 23:46:00     6.58      125.     9       2.1
+    #>  3 2026-04-03 10:35:32 2020-01-31 23:02:00     8.59      127.    13       3.2
+    #>  4 2026-04-03 10:35:32 2020-01-31 22:34:00     6.62      125.    13       3.6
+    #>  5 2026-04-03 10:35:32 2020-01-31 21:18:00     6.57      125.    16       2.8
+    #>  6 2026-04-03 10:35:32 2020-01-31 21:17:00    10.2       126.    18       2.9
+    #>  7 2026-04-03 10:35:32 2020-01-31 19:35:00     6.58      125.    17       3.1
+    #>  8 2026-04-03 10:35:32 2020-01-31 19:18:00     6.59      125.    13       4.9
+    #>  9 2026-04-03 10:35:32 2020-01-31 17:46:00    10.5       126.     3       3.5
+    #> 10 2026-04-03 10:35:32 2020-01-31 15:42:00     5.22      126.    37       3.1
     #> # ℹ 14,037 more rows
     #> # ℹ 1 more variable: location <chr>
 
@@ -235,14 +235,32 @@ being used) by specifying the `cores` argument to the desired
 appropriate number of processes to initiate.
 
 For example, if data for a specific year is needed, say for example for
-year 2024, using parallelisation using 8 parallel processes, then:
+year 2019, using parallelisation using 8 parallel processes, then:
 
 ``` r
 ## Retrieve data for all months of year 2024 using parallelisation ----
-eq_data_bulletin(.year = 2024, parallel = TRUE, cores = 8)
+eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
 ```
 
 which gives:
+
+    #> # A tibble: 12,655 × 14
+    #>    date_time           bulletin_number longitude latitude depth magnitude
+    #>    <dttm>                        <int>     <dbl>    <dbl> <int>     <dbl>
+    #>  1 2019-01-31 14:55:06               2      9.64     122.     6       2.7
+    #>  2 2019-01-31 12:13:14               3      8.44     127.    24       3.7
+    #>  3 2019-01-31 11:38:57               2      9.81     126.     7       2.9
+    #>  4 2019-01-31 09:05:42               2      5.45     126.    53       2.2
+    #>  5 2019-01-31 07:14:33               2      5.85     126.    15       2.7
+    #>  6 2019-01-31 06:13:16               2     11.5      126      1       2.8
+    #>  7 2019-01-31 06:04:36               2     14.4      124.     2       1.8
+    #>  8 2019-01-31 05:02:56               2     10.6      125.    27       2.3
+    #>  9 2019-01-31 04:37:24               2     10.4      125.    26       2.2
+    #> 10 2019-01-31 04:06:29               2      9.77     126.    14       2.1
+    #> # ℹ 12,645 more rows
+    #> # ℹ 8 more variables: magnitude_type <chr>, reported_intensity <chr>,
+    #> #   location <chr>, origin <chr>, expect_damage <chr>,
+    #> #   expect_aftershocks <chr>, date_time_issued <dttm>, prepared_by <chr>
 
 ## Citation
 
@@ -254,8 +272,8 @@ follows:
 citation("lindol")
 #> To cite lindol in publications use:
 #> 
-#>   Ernest Guevarra (2024). _lindol: An Interface to the PHIVOLCS
-#>   Earthquake Bulletins_. R package version 0.0.9000,
+#>   Ernest Guevarra (2026). _lindol: An Interface to the PHIVOLCS
+#>   Earthquake Bulletins_. R package version 0.0.9001,
 #>   <https://panukatan.io/lindol/>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -263,8 +281,8 @@ citation("lindol")
 #>   @Manual{,
 #>     title = {lindol: An Interface to the PHIVOLCS Earthquake Bulletins},
 #>     author = {{Ernest Guevarra}},
-#>     year = {2024},
-#>     note = {R package version 0.0.9000},
+#>     year = {2026},
+#>     note = {R package version 0.0.9001},
 #>     url = {https://panukatan.io/lindol/},
 #>   }
 ```
