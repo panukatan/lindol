@@ -149,18 +149,18 @@ The output has 7 fields:
 
 The default implementation of the `eq_data_bulletin()` function outputs earthquake monitoring data for the current month of the current year. Also, the default behaviour is to perform this data extraction sequentially i.e., every earthquake record for the specified month and year combination one after the other. This approach can take long specifically for month and year combinations that have many recorded earthquakes. The `eq_data_bulletin()` function includes option for parallelisation of this process by specifying the argument `parallel = TRUE` which, by default, will initiate 2 parallel processes. This can be increased (depending on the specifications of the machine being used) by specifying the `cores` argument to the desired appropriate number of processes to initiate.
 
-For example, if data for a specific year is needed, say for example for year 2024, using parallelisation using 8 parallel processes, then:
+For example, if data for a specific year is needed, say for example for year 2019, using parallelisation using 8 parallel processes, then:
 
 ```{r, usage-bulletin-2a, eval = FALSE}
 ## Retrieve data for all months of year 2024 using parallelisation ----
-eq_data_bulletin(.year = 2024, parallel = TRUE, cores = 8)
+eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
 ```
 
 which gives:
 
-```{r, usage-bulletin-2b, eval = FALSE, echo = FALSE}
+```{r, usage-bulletin-2b, echo = FALSE}
 ## Retrieve data for all months of year 2024 ----
-eq_data_bulletin(.year = 2024, parallel = TRUE, cores = 8)
+eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
 ```
 
 ## Citation

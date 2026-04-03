@@ -3,7 +3,7 @@ bibentry(
   header   = "To cite lindol in publications use:",
   title    = "lindol: An Interface to the PHIVOLCS Earthquake Bulletins",
   author   = person("Ernest Guevarra"),
-  year     = "2024",
-  note     = "R package version 0.0.9000",
+  year     = "2026",
+  note     = "R package version 0.0.9001",
   url      = "https://panukatan.io/lindol/"
 )
