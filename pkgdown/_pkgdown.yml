@@ -7,10 +7,21 @@ development:
 
 template:
   bootstrap: 5
-  bootswatch: cosmo
-  theme: haddock
-  params:
-    ganalytics:
+  theme: breeze-light
+  bslib:
+    bootswatch: pulse    
+    pkgdown-nav-height: 100px
+  includes:
+    in_header: |
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-933V9NL3GH"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-933V9NL3GH');
+      </script>
 
 home:
   links:
@@ -18,11 +29,11 @@ home:
     href: https://www.phivolcs.dost.gov.ph/index.php/earthquake/earthquake-monitoring
 
 navbar:
-  bg: info
-  type: light
+  bg: primary
+  type: dark
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [mastodon, linkedin, github]
+    right: [website, mastodon, linkedin, github]
 
   #components:
     # intro:

@@ -15,9 +15,17 @@
 #'
 
 eq_get_bulletin <- function(.url) {
-  ## Check URL ----
-  url_error <- httr::http_error(.url)
+  ## Quiet down error on SSL ----
+  httr::config(ssl_verifypeer = 0L) |>
+    httr::set_config()
 
+  ## Check URL ----
+  if (is.null(.url)) {
+    url_error <- TRUE
+  } else {
+    url_error <- httr::http_error(.url)
+  }
+  
   if (url_error) {
     NULL
   } else {

@@ -46,10 +46,9 @@ eq_process_bulletins <- function(eq_df) {
       )
     ) |>
     dplyr::select(
-      .data$date_time, .data$bulletin_number, .data$longitude, .data$latitude,
-      .data$depth, .data$magnitude, .data$magnitude_type,
-      .data$reported_intensity, .data$location,
-      .data$origin, .data$expect_damage, .data$expect_aftershocks,
-      .data$date_time_issued, .data$prepared_by
+      "date_time", "bulletin_number", "longitude", "latitude", "depth",
+      "magnitude", "magnitude_type", "reported_intensity", "location",
+      "origin", "expect_damage", "expect_aftershocks", "date_time_issued", 
+      "prepared_by"
     )
 }

@@ -16,8 +16,12 @@ Description: The Philippine Institute of Volcanology and Seismology (PHIVOLCS)
   structures information from the frequent earthquake bulletins released by 
   PHIVOLCS into machine-readable versions.
 License: GPL (>= 3)
+Depends: 
+    R (>= 4.1.0)
 Imports: 
+    doParallel,
     dplyr,
+    foreach,
     httr,
     rlang,
     rvest,
@@ -29,7 +33,7 @@ Suggests:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 URL: https://panukatan.io/lindol/, https://github.com/panukatan/lindol, http://panukatan.io/lindol/
 BugReports: https://github.com/panukatan/lindol/issues

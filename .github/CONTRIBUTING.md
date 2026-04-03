@@ -8,16 +8,16 @@
 
 * Fork this repository to your Github account
 
-* Clone your version on your account down to your machine from your account 
+* Clone your forked version from your GitHub account to your machine
 
-```
+```bash
 git clone https://github.com/<yourgithubusername>/lindol.git
 ```
 
 * Make sure to track progress upstream i.e., on our version of `lindol` 
 at `panukatan/lindol`, by doing 
 
-```
+```bash
 git remote add upstream https://github.com/panukatan/lindol.git
 ```
 

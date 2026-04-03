@@ -16,7 +16,9 @@ eq_data_bulletin(
   .url = "https://earthquake.phivolcs.dost.gov.ph/",
   .year = NULL,
   .month = NULL,
-  latest = TRUE
+  latest = TRUE,
+  parallel = FALSE,
+  cores = 2
 )
 }
 \arguments{
@@ -37,6 +39,13 @@ retrieved? Only evaluated if \code{.year = NULL} and \code{.month = NULL}. If TR
 (default), table of earthquake information for current year and current
 month is retrieved. Otherwise, all months for all possible years are
 retrieved.}
+
+\item{parallel}{Logical. Should the function use parallelisation? Default to
+FALSE.}
+
+\item{cores}{The number of computer cores to use or number of child processes
+to be run simultaneously. Default to one less than the available number of
+cores on current machine.}
 }
 \value{
 A tibble of processed earthquake data.

@@ -15,6 +15,11 @@
 #'   (default), table of earthquake information for current year and current
 #'   month is retrieved. Otherwise, all months for all possible years are
 #'   retrieved.
+#' @param parallel Logical. Should the function use parallelisation? Default to
+#'   FALSE.
+#' @param cores The number of computer cores to use or number of child processes
+#'   to be run simultaneously. Default to one less than the available number of
+#'   cores on current machine.
 #'
 #' @returns A tibble of processed earthquake data.
 #'
@@ -38,10 +43,23 @@ eq_data_summary <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
 #'
 
 eq_data_bulletin <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
-                             .year = NULL, .month = NULL, latest = TRUE) {
-  eq_get_bulletin_urls(
+                             .year = NULL, .month = NULL, latest = TRUE,
+                             parallel = FALSE, cores = 2) {
+  urls <- eq_get_bulletin_urls(
     .url = .url, .year = .year, .month = .month, latest = latest
-  ) |>
-    eq_get_bulletins() |>
-    eq_process_bulletins()
+  )
+  
+  if (parallel) {
+    doParallel::registerDoParallel(cores = cores)
+
+    eq_df <- foreach::foreach(i = urls, .combine = rbind) %dopar% 
+      eq_get_bulletin(.url = i) |>
+      eq_process_bulletins()
+  } else {
+    eq_df <- urls |>
+      eq_get_bulletins() |>
+      eq_process_bulletins()
+  }
+
+  eq_df
 }
