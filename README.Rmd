@@ -59,6 +59,14 @@ install.packages(
   repos = c("https://panukatan.r-universe.dev", "https://cloud.r-project.org")
 )
 ```
+
+or from GitHub using the `{pak}` package with:
+
+```R
+if (!require("pak")) install.packages("pak")
+pak::pak("panukatan/lindol")
+```
+
 ## Usage
 
 The main usage of `{lindol}` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins. The main functions are `eq_data_summary()` and `eq_data_bulletin()` which outputs summary and detailed earthquake information respectively. This [vignette]() describes the structure of the PHIVOLCS earthquake information bulletin webpages and the difference between the summary and bulletin earthquake information. 

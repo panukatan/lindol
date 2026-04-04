@@ -143,6 +143,9 @@ eq_get_bulletin_url_ <- function(.url) {
     .url
   )
 
+  ## Replace spaces with %20 ----
+  eq_url <- gsub(pattern = "\\s", replacement = "%20", x = eq_url)
+
   eq_url
 }
 
