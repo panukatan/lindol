@@ -22,6 +22,7 @@
 #' @importFrom tibble tibble
 #' @importFrom doParallel registerDoParallel
 #' @importFrom foreach foreach %dopar%
+#' @importFrom stats setNames
 #'
 "_PACKAGE"
 

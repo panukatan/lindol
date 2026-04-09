@@ -45,18 +45,20 @@ eq_data_summary <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
 eq_data_bulletin <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
                              .year = NULL, .month = NULL, latest = TRUE,
                              parallel = FALSE, cores = 2) {
-  urls <- eq_get_bulletin_urls(
+  eq_summary <- eq_data_summary(
     .url = .url, .year = .year, .month = .month, latest = latest
   )
   
   if (parallel) {
     doParallel::registerDoParallel(cores = cores)
 
-    eq_df <- foreach::foreach(i = urls, .combine = rbind) %dopar% 
-      eq_get_bulletin(.url = i) |>
+    eq_df <- foreach::foreach(
+      i = seq_len(nrow(eq_summary)), .combine = rbind
+    ) %dopar% 
+      eq_get_bulletin(.url = eq_summary$bulletin_url[i]) |>
       eq_process_bulletins()
   } else {
-    eq_df <- urls |>
+    eq_df <- eq_summary$bulletin_url |>
       eq_get_bulletins() |>
       eq_process_bulletins()
   }

@@ -39,6 +39,12 @@ eq_get_bulletin_urls <- function(.url = "https://earthquake.phivolcs.dost.gov.ph
     urls <- eq_build_url(.url = .url, .year = .year, .month = .month)
   }
 
+  ## Get data summary ----
+  eq_summary <- eq_data_summary(
+    .url = .url, .year = .year, .month = .month, latest = latest
+  ) |>
+    dplyr::mutate(url = urls)
+
   ## Retrieve URLs ----
   lapply(
     X = urls,
@@ -149,3 +155,69 @@ eq_get_bulletin_url_ <- function(.url) {
   eq_url
 }
 
+
+eq_get_bulletin_links <- function(.url) {
+  ## Detect year and month from URL ----
+  .year <- stringr::str_extract(string = .url, pattern = "[0-9]{4}") |>
+    as.integer()
+  .month <- stringr::str_extract(
+    string = .url, pattern = paste(month.name, collapse = "|")
+  )
+
+  ## Quiet down error on SSL ----
+  httr::config(ssl_verifypeer = 0L) |>
+    httr::set_config()
+
+  session <- rvest::session(.url)
+
+  if (.year == 2018 & .month %in% month.name[seq_len(5)]) {
+    if (.month == "January") {
+      urls <- session |>
+        rvest::html_elements(css = ".MsoNormalTable .auto-style49 a") |>
+        rvest::html_attr(name = "href")
+    }
+
+    if (.month == "February") {
+      urls <- session |>
+        rvest::html_elements(css = ".MsoNormalTable .auto-style21 a") |>
+        rvest::html_attr(name = "href") |>
+        grep(pattern = "2018_0201_1247_B1", x = _, value = TRUE, invert = TRUE)
+    }
+
+    if (.month == "March") {
+      urls <- session |>
+        rvest::html_elements(css = ".MsoNormalTable .auto-style21 a") |>
+        rvest::html_attr(name = "href") |>
+        grep(pattern = "2018_0228_1557_B1", x = _, value = TRUE, invert = TRUE) |>
+        grep(pattern = "2018_0302_1428_B1", x = _, value = TRUE, invert = TRUE) |>
+        grep(pattern = "2018_0309_1453_B1", x = _, value = TRUE, invert = TRUE) |>
+        grep(pattern = "2018_0303_0007_B2", x = _, value = TRUE, invert = TRUE) |>
+        grep(pattern = "2018_0319_1654_B1", x = _, value = TRUE, invert = TRUE) |>
+        (\(x) x[c(1:245, 247:370)])()
+    }
+
+    if (.month %in% c("April", "May")) {
+      urls <- session |>
+        rvest::html_elements(css = ".MsoNormalTable .auto-style21 a") |>
+        rvest::html_attr(name = "href")
+    }
+  } else {
+    urls <- session |>
+      rvest::html_elements(css = ".MsoNormalTable .auto-style70 a") |>
+      rvest::html_attr(name = "href") 
+  }
+
+  urls <- sub(
+    pattern = "../../|..\\\\..\\\\", 
+    replacement = "",
+    x = urls
+  ) |>
+    gsub(pattern = "\\\\", replacement = "/", x = _) |>
+    (\(x) file.path("https://earthquake.phivolcs.dost.gov.ph", x))()
+
+  if (!is.na(.year) & .year == 2019 & !is.na(.month) &.month == "June") {
+    urls[248] <- "https://earthquake.phivolcs.dost.gov.ph/2019_Earthquake_Information/June/2019_0619_0222_B2.html"
+  }
+
+  urls
+}

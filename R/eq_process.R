@@ -34,9 +34,8 @@ eq_process_table <- function(eq_data_list) {
     eq_data_list |>
       dplyr::rename_with(
         .fn = function(x) c(
-          "date_time_retrieved", "date_time",
-          "latitude", "longitude",
-          "depth", "magnitude", "location"
+          "date_time", "latitude", "longitude",
+          "depth", "magnitude", "location", "bulletin_url"
         )
       ) |>
       dplyr::mutate(

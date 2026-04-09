@@ -8,12 +8,10 @@ test_that("eq_process outputs are appropriate", {
   expect_named(
     df,
     expected = c(
-      "date_time_retrieved", "date_time",
-      "latitude", "longitude",
-      "depth", "magnitude", "location"
+      "date_time", "latitude", "longitude",
+      "depth", "magnitude", "location", "bulletin_url"
     )
   )
-  expect_s3_class(df$date_time_retrieved, "POSIXt")
   expect_s3_class(df$date_time, "POSIXt")
   expect_vector(df$latitude, ptype = double())
   expect_vector(df$longitude, ptype = double())
@@ -30,9 +28,8 @@ test_that("eq_process outputs are appropriate", {
   expect_named(
     df,
     expected = c(
-      "date_time_retrieved", "date_time",
-      "latitude", "longitude",
-      "depth", "magnitude", "location"
+      "date_time", "latitude", "longitude",
+      "depth", "magnitude", "location", "bulletin_url"
     )
   )
 })
@@ -46,9 +43,8 @@ test_that("eq_process outputs are appropriate", {
   expect_named(
     df,
     expected = c(
-      "date_time_retrieved", "date_time",
-      "latitude", "longitude",
-      "depth", "magnitude", "location"
+      "date_time", "latitude", "longitude",
+      "depth", "magnitude", "location", "bulletin_url"
     )
   )
 })

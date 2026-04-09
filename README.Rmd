@@ -95,8 +95,6 @@ eq_data_summary()
 
 The output has 7 fields:
 
-* `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`) the data has been retrieved from the PHIVOLCS earthquake monitoring bulletins. This is basically a time stamp on when the user made a call to `eq_data()`;
-
 * `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);
 
 * `longitude` - Longitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;
@@ -105,9 +103,11 @@ The output has 7 fields:
 
 * `depth` - Depth (in kilometres units) of the hypocentre of the detected earthquake;
 
-* `magnitude` - Magnitude of the earthquake; and,
+* `magnitude` - Magnitude of the earthquake;
 
-* `location` - Location of the earthquake in relation to a monitoring station.
+* `location` - Location of the earthquake in relation to a monitoring station; and,
+
+* `bulletin_url` - URL for full earthquake bulletin.
 
 The default implementation of the `eq_data()` function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:
 
@@ -168,7 +168,7 @@ which gives:
 
 ```{r, usage-bulletin-2b, echo = FALSE}
 ## Retrieve data for all months of year 2024 ----
-eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
+eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 16)
 ```
 
 ## Citation
