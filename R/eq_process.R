@@ -40,7 +40,7 @@ eq_process_table <- function(eq_data_list) {
       ) |>
       dplyr::mutate(
         date_time = strptime(
-          .data$date_time, format = "%d %B %Y - %I:%M %p", tz = "PST"
+          .data$date_time, format = "%d %B %Y - %I:%M %p", tz = "PHT"
         ),
         dplyr::across(
           .cols = "latitude":"magnitude",

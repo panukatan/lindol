@@ -40,10 +40,10 @@ eq_get_bulletin_urls <- function(.url = "https://earthquake.phivolcs.dost.gov.ph
   }
 
   ## Get data summary ----
-  eq_summary <- eq_data_summary(
-    .url = .url, .year = .year, .month = .month, latest = latest
-  ) |>
-    dplyr::mutate(url = urls)
+  # eq_summary <- eq_data_summary(
+  #   .url = .url, .year = .year, .month = .month, latest = latest
+  # ) |>
+  #   dplyr::mutate(url = urls)
 
   ## Retrieve URLs ----
   lapply(
