@@ -11,7 +11,7 @@
 #' .url <- eq_build_url(.year = 2020, .month = "January")
 #' eq_get_bulletin_links(.url)
 #'
-#' @rdname eq_get_bulletin_links
+#' @rdname eq_get_bulletin_link
 #' @export
 #'
 
@@ -123,7 +123,7 @@
 #   eq_url
 # }
 
-eq_get_bulletin_links <- function(.url) {
+eq_get_bulletin_link <- function(.url) {
   ## Detect year and month from URL ----
   .year <- stringr::str_extract(string = .url, pattern = "[0-9]{4}") |>
     as.integer()
@@ -187,4 +187,15 @@ eq_get_bulletin_links <- function(.url) {
   }
 
   urls
+}
+
+
+#'
+#' @rdname eq_get_bulletin_link
+#' @export
+#'
+
+eq_get_bulletin_links <- function(.url) {
+  lapply(X = .url, FUN = eq_get_bulletin_link) |>
+    unlist()
 }
