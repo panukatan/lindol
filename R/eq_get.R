@@ -280,7 +280,7 @@ eq_get_table <- function(.url) {
           X3 = "124.48",
           X4 = "016",
           X5 = "2.3",
-          X6 = "010 km N 23 E of Santo Niño (Western Samar)"
+          X6 = "010 km N 23 E of Santo Nino (Western Samar)"
         ) |>
           setNames(nm = names(tab)),
         tab[574:799, ],
@@ -857,7 +857,7 @@ eq_get_table <- function(.url) {
           X3 = "121.22",
           X4 = "016",
           X5 = "2.4",
-          X6 = "004 km N 13 W of Los Baños (Laguna)" 
+          X6 = "004 km N 13 W of Los Banos (Laguna)" 
         ) |>
           setNames(nm = names(tab)),
         tab[450:457, ],
@@ -919,7 +919,7 @@ eq_get_table <- function(.url) {
           X3 = "121.34",
           X4 = "022",
           X5 = "1.7",
-          X6 = "028 km S 87 E of Doña Remedios Trinidad (Bulacan)" 
+          X6 = "028 km S 87 E of Dona Remedios Trinidad (Bulacan)" 
         ) |>
           setNames(nm = names(tab)),
         tab[812:1137, ]
@@ -967,7 +967,7 @@ eq_get_table <- function(.url) {
           X3 = "121.23",
           X4 = "035",
           X5 = "1.7",
-          X6 = "004 km S 11 E of Los Baños (Laguna)" 
+          X6 = "004 km S 11 E of Los Banos (Laguna)" 
         ) |>
           setNames(nm = names(tab)),
         tab[60:80, ],
@@ -977,7 +977,7 @@ eq_get_table <- function(.url) {
           X3 = "121.20",
           X4 = "011",
           X5 = "3.0",
-          X6 = "008 km N 18 W of Los Baños (Laguna)" 
+          X6 = "008 km N 18 W of Los Banos (Laguna)" 
         ) |>
           setNames(nm = names(tab)),
         tab[81 :781, ]

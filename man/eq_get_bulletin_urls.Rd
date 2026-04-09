@@ -4,6 +4,7 @@
 \alias{eq_get_bulletin_urls}
 \alias{eq_get_bulletin_urls_}
 \alias{eq_get_bulletin_url_}
+\alias{eq_get_bulletin_links}
 \title{Get PHIVOLCS earthquake information bulletins}
 \usage{
 eq_get_bulletin_urls(
@@ -16,6 +17,8 @@ eq_get_bulletin_urls(
 eq_get_bulletin_urls_(.url)
 
 eq_get_bulletin_url_(.url)
+
+eq_get_bulletin_links(.url)
 }
 \arguments{
 \item{.url}{Base URL for PHIVOLCS earthquake bulletins.}

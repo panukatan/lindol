@@ -114,19 +114,6 @@ eq_get_bulletin_urls_ <- function(.url) {
   ) |>
     unlist()
 
-  # base_url <- "https://earthquake.phivolcs.dost.gov.ph"
-
-  # ## Enforce standard base url ----
-  # eq_url <- ifelse(
-  #   dirname(dirname(dirname(eq_url))) != base_url,
-  #   sub(
-  #     pattern = dirname(dirname(dirname(eq_url))),
-  #     x = eq_url,
-  #     replacement = base_url
-  #   ),
-  #   eq_url
-  # )
-
   eq_url
 }
 
@@ -155,6 +142,10 @@ eq_get_bulletin_url_ <- function(.url) {
   eq_url
 }
 
+#'
+#' @rdname eq_get_bulletin_urls
+#' @export
+#'
 
 eq_get_bulletin_links <- function(.url) {
   ## Detect year and month from URL ----
