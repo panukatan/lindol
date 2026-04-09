@@ -21,7 +21,7 @@ eq_process_bulletins <- function(eq_df) {
   eq_df |>
     dplyr::mutate(
       date_time = strptime(
-        .data$date_time, format = "%d %B %Y - %I:%M:%S %p", tz = "PHT"
+        .data$date_time, format = "%d %B %Y - %I:%M:%S %p", tz = "Asia/Manila"
       ),
       bulletin_number = as.integer(.data$bulletin_number),
       longitude = get_longitude(.data$location),
@@ -43,7 +43,7 @@ eq_process_bulletins <- function(eq_df) {
       expect_damage = tolower(.data$expect_damage),
       expect_aftershocks = tolower(.data$expect_aftershocks),
       date_time_issued = strptime(
-        .data$date_time_issued, format = "%d %B %Y - %I:%M %p", tz = "PHT"
+        .data$date_time_issued, format = "%d %B %Y - %I:%M %p", tz = "Asia/Manila"
       )
     ) |>
     dplyr::select(
