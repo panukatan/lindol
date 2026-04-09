@@ -1178,7 +1178,6 @@ eq_get_table <- function(.url) {
       dplyr::mutate(
         dplyr::across(.cols = dplyr::everything(), .fns = ~as.character(.x)),
         bulletin_url = eq_get_bulletin_links(.url)
-        #date_time_retrieved = Sys.time(), .before = 1
       )
   }
 
