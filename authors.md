@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/panukatan/lindol/blob/main/inst/CITATION)
+[`inst/CITATION`](https://github.com/panukatan/lindol/blob/v0.0.0.9000/inst/CITATION)
 
 Ernest Guevarra (2026). *lindol: An Interface to the PHIVOLCS Earthquake
 Bulletins*. R package version 0.0.9000, <https://panukatan.io/lindol/>.
