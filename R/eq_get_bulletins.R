@@ -35,7 +35,31 @@ eq_get_bulletin <- function(.url) {
   }
   
   if (url_error | html_error) {
-    NULL
+    ## Detect year and month from URL ----
+    .year <- stringr::str_extract(string = .url, pattern = "[0-9]{4}") |>
+      as.integer()
+    .month <- stringr::str_extract(
+      string = .url, pattern = paste(month.name, collapse = "|")
+    )
+
+    eq_df <- eq_data_summary(.year = .year, .month = .month) |>
+      dplyr::filter(.data$bulletin_url == .url)
+
+    tibble::tibble(
+      date_time = as.character(eq_df$date_time),
+      bulletin_number = NA_character_,
+      depth = as.character(eq_df$depth),
+      magnitude = as.character(eq_df$magnitude),
+      location = paste0(
+        eq_df$latitude, ", ", eq_df$longitude, " - ", eq_df$location
+      ),
+      origin = NA_character_,
+      reported_intensity = NA_character_,
+      expect_damage = NA_character_,
+      expect_aftershocks = NA_character_,
+      date_time_issued = NA_character_,
+      prepared_by = NA_character_
+    )
   } else {
     rvest::session(url = .url) |>
       rvest::html_table() |>

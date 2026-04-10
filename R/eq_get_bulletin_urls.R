@@ -182,6 +182,8 @@ eq_get_bulletin_link <- function(.url) {
     gsub(pattern = "\\\\", replacement = "/", x = _) |>
     (\(x) file.path("https://earthquake.phivolcs.dost.gov.ph", x))()
 
+  urls <- sub(pattern = "ph//", replacement = "ph/", x = urls)
+
   if (!is.na(.year) & .year == 2019 & !is.na(.month) &.month == "June") {
     urls[248] <- "https://earthquake.phivolcs.dost.gov.ph/2019_Earthquake_Information/June/2019_0619_0222_B2.html"
   }
