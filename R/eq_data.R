@@ -55,7 +55,7 @@ eq_data_bulletin <- function(.url = "https://earthquake.phivolcs.dost.gov.ph/",
     eq_df <- foreach::foreach(
       i = seq_len(nrow(eq_summary)), .combine = rbind
     ) %dopar% 
-      eq_get_bulletin(.url = eq_summary$bulletin_url[i]) |>
+      eq_get_bulletins(.url = eq_summary$bulletin_url[i]) |>
       eq_process_bulletins()
   } else {
     eq_df <- eq_summary$bulletin_url |>

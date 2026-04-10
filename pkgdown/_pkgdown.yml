@@ -61,8 +61,8 @@ reference:
 
   - title: Get
     contents:
-    - eq_get_table
     - eq_get_bulletin_link
+    - eq_get_table
     - eq_get_bulletin
 
   - title: Process
