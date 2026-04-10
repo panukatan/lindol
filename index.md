@@ -95,20 +95,20 @@ eq_data_summary()
 which provides a tibble output as follows:
 
 ``` R
-#> # A tibble: 537 × 7
+#> # A tibble: 545 × 7
 #>    date_time           latitude longitude depth magnitude location  bulletin_url
 #>    <dttm>                 <dbl>     <dbl> <dbl>     <dbl> <chr>     <chr>       
-#>  1 2026-04-10 16:52:00     8.29      126.    13       2.9 11 km S … https://ear…
-#>  2 2026-04-10 15:56:00     7.3       127.     9       3.3 25 km S … https://ear…
-#>  3 2026-04-10 15:25:00     6.35      127.    36       2.3 85 km S … https://ear…
-#>  4 2026-04-10 15:21:00     4.84      126.    10       2.8 113 km S… https://ear…
-#>  5 2026-04-10 15:01:00     4.95      126.    13       3.2 101 km S… https://ear…
-#>  6 2026-04-10 14:26:00     8.64      127.    26       2.4 35 km S … https://ear…
-#>  7 2026-04-10 12:47:00    16.2       120.     7       2.2 20 km N … https://ear…
-#>  8 2026-04-10 12:35:00    11.2       122.    26       1.8 11 km S … https://ear…
-#>  9 2026-04-10 12:32:00    14.1       120.    97       1.3 31 km N … https://ear…
-#> 10 2026-04-10 12:29:00     6.69      124.    22       1.9 38 km N … https://ear…
-#> # ℹ 527 more rows
+#>  1 2026-04-10 21:21:00     7.43      123.    23       1.4 14 km S … https://ear…
+#>  2 2026-04-10 21:10:00    13.7       121.   107       2.2 15 km S … https://ear…
+#>  3 2026-04-10 20:48:00     7.67      127.    23       2.2 22 km N … https://ear…
+#>  4 2026-04-10 20:30:00    17.6       121.     9       2.1 4 km N 6… https://ear…
+#>  5 2026-04-10 20:00:00    16.7       120.    22       4   38 km N … https://ear…
+#>  6 2026-04-10 19:01:00    16.8       120.    93       1.9 4 km S 5… https://ear…
+#>  7 2026-04-10 18:08:00    17.9       121.    27       1.7 7 km S 4… https://ear…
+#>  8 2026-04-10 17:14:00     8.92      127.    33       2.1 23 km N … https://ear…
+#>  9 2026-04-10 16:52:00     8.29      126.    13       2.9 11 km S … https://ear…
+#> 10 2026-04-10 15:56:00     7.3       127.     9       3.3 25 km S … https://ear…
+#> # ℹ 535 more rows
 ```
 
 The output has 7 fields:
@@ -178,7 +178,7 @@ eq_data_bulletin(.year = 2018, .month = "January")
 which provides a tibble output as follows:
 
 ``` R
-#> # A tibble: 364 × 14
+#> # A tibble: 374 × 14
 #>    date_time           bulletin_number longitude latitude depth magnitude
 #>    <dttm>                        <int>     <dbl>    <dbl> <int>     <dbl>
 #>  1 2018-01-31 23:07:37               2     13.2      125.    25       2.8
@@ -191,13 +191,13 @@ which provides a tibble output as follows:
 #>  8 2018-01-30 22:11:51               3     19.3      121.    15       4.9
 #>  9 2018-01-30 21:40:42               2     18.4      121.     8       3.1
 #> 10 2018-01-30 19:55:22               2     17.0      121.    20       2.6
-#> # ℹ 354 more rows
+#> # ℹ 364 more rows
 #> # ℹ 8 more variables: magnitude_type <chr>, reported_intensity <chr>,
 #> #   location <chr>, origin <chr>, expect_damage <chr>,
 #> #   expect_aftershocks <chr>, date_time_issued <dttm>, prepared_by <chr>
 ```
 
-The output has 7 fields:
+The output has 11 fields:
 
 - `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific
   earthquake was detected and recorded. This is recorded in Philippine
@@ -257,7 +257,7 @@ eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
 which gives:
 
 ``` R
-#> # A tibble: 12,977 × 14
+#> # A tibble: 13,037 × 14
 #>    date_time           bulletin_number longitude latitude depth magnitude
 #>    <dttm>                        <int>     <dbl>    <dbl> <int>     <dbl>
 #>  1 2019-01-31 14:55:06               2      9.64     122.     6       2.7
@@ -270,7 +270,7 @@ which gives:
 #>  8 2019-01-31 05:02:56               2     10.6      125.    27       2.3
 #>  9 2019-01-31 04:37:24               2     10.4      125.    26       2.2
 #> 10 2019-01-31 04:06:29               2      9.77     126.    14       2.1
-#> # ℹ 12,967 more rows
+#> # ℹ 13,027 more rows
 #> # ℹ 8 more variables: magnitude_type <chr>, reported_intensity <chr>,
 #> #   location <chr>, origin <chr>, expect_damage <chr>,
 #> #   expect_aftershocks <chr>, date_time_issued <dttm>, prepared_by <chr>
@@ -288,7 +288,7 @@ citation("lindol")
 #> To cite lindol in publications use:
 #> 
 #>   Ernest Guevarra (2026). _lindol: An Interface to the PHIVOLCS
-#>   Earthquake Bulletins_. R package version 0.0.9000,
+#>   Earthquake Bulletins_. R package version 0.0.9001,
 #>   <https://panukatan.io/lindol/>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -297,7 +297,7 @@ citation("lindol")
 #>     title = {lindol: An Interface to the PHIVOLCS Earthquake Bulletins},
 #>     author = {{Ernest Guevarra}},
 #>     year = {2026},
-#>     note = {R package version 0.0.9000},
+#>     note = {R package version 0.0.9001},
 #>     url = {https://panukatan.io/lindol/},
 #>   }
 ```
