@@ -322,13 +322,13 @@ participating in this project you agree to abide by its terms.
 
 ## Get
 
+- [`eq_get_bulletin_link()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  [`eq_get_bulletin_links()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  : Get URLs for detailed PHIVOLCS earthquake information bulletins
 - [`eq_get_tables()`](https://panukatan.io/lindol/reference/eq_get_table.md)
   [`eq_get_table()`](https://panukatan.io/lindol/reference/eq_get_table.md)
   : Get earthquake monitoring information from PHIVOLCS earthquake
   bulletin HTMLs
-- [`eq_get_bulletin_link()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
-  [`eq_get_bulletin_links()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
-  : Get URLs for detailed PHIVOLCS earthquake information bulletins
 - [`eq_get_bulletin()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   [`eq_get_bulletins()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   : Retrieve raw information from PHIVOLCS earthquake information

@@ -53,20 +53,20 @@ A list of tibble/s of raw earthquake information from PHIVOLCS.
 ``` r
 eq_get_tables()
 #> [[1]]
-#> # A tibble: 538 × 7
+#> # A tibble: 545 × 7
 #>    `Date - Time(Philippine Time)` Latitude\n           …¹ Longitude\n         …²
 #>    <chr>                          <chr>                   <chr>                 
-#>  1 10 April 2026 - 05:14 PM       08.92                   126.51                
-#>  2 10 April 2026 - 04:52 PM       08.29                   125.96                
-#>  3 10 April 2026 - 03:56 PM       07.30                   126.79                
-#>  4 10 April 2026 - 03:25 PM       06.35                   126.78                
-#>  5 10 April 2026 - 03:21 PM       04.84                   126.29                
-#>  6 10 April 2026 - 03:01 PM       04.95                   126.22                
-#>  7 10 April 2026 - 02:26 PM       08.64                   126.57                
-#>  8 10 April 2026 - 12:47 PM       16.23                   120.18                
-#>  9 10 April 2026 - 12:35 PM       11.20                   122.46                
-#> 10 10 April 2026 - 12:32 PM       14.12                   120.35                
-#> # ℹ 528 more rows
+#>  1 10 April 2026 - 09:21 PM       07.43                   122.68                
+#>  2 10 April 2026 - 09:10 PM       13.73                   120.55                
+#>  3 10 April 2026 - 08:48 PM       07.67                   126.74                
+#>  4 10 April 2026 - 08:30 PM       17.59                   120.53                
+#>  5 10 April 2026 - 08:00 PM       16.74                   119.88                
+#>  6 10 April 2026 - 07:01 PM       16.83                   120.35                
+#>  7 10 April 2026 - 06:08 PM       17.91                   120.57                
+#>  8 10 April 2026 - 05:14 PM       08.92                   126.51                
+#>  9 10 April 2026 - 04:52 PM       08.29                   125.96                
+#> 10 10 April 2026 - 03:56 PM       07.30                   126.79                
+#> # ℹ 535 more rows
 #> # ℹ abbreviated names: ¹​`Latitude\n              (ºN)`,
 #> #   ²​`Longitude\n              (ºE)`
 #> # ℹ 4 more variables: `Depth\n              (km)` <chr>, Mag <chr>,
