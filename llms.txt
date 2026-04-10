@@ -95,20 +95,20 @@ eq_data_summary()
 which provides a tibble output as follows:
 
 ``` R
-#> # A tibble: 505 × 7
+#> # A tibble: 537 × 7
 #>    date_time           latitude longitude depth magnitude location  bulletin_url
 #>    <dttm>                 <dbl>     <dbl> <dbl>     <dbl> <chr>     <chr>       
-#>  1 2026-04-10 00:36:00    13.7       122.    33       1.4 3 km S 6… https://ear…
-#>  2 2026-04-10 00:07:00    13.7       123.    10       3.5 12 km N … https://ear…
-#>  3 2026-04-10 00:01:00     8.22      127.    10       4.2 58 km N … https://ear…
-#>  4 2026-04-09 23:13:00    15.3       120.    34       1.4 21 km S … https://ear…
-#>  5 2026-04-09 23:07:00     6.17      126.    80       4.5 36 km S … https://ear…
-#>  6 2026-04-09 22:16:00    15.0       123.    27       1.5 54 km N … https://ear…
-#>  7 2026-04-09 21:46:00    14.8       120.    22       2.9 47 km S … https://ear…
-#>  8 2026-04-09 21:19:00    10.1       125.    12       2.4 6 km S 6… https://ear…
-#>  9 2026-04-09 21:18:00     9.1       127.    33       2   32 km N … https://ear…
-#> 10 2026-04-09 21:10:00    19.2       122.    30       1.4 14 km S … https://ear…
-#> # ℹ 495 more rows
+#>  1 2026-04-10 16:52:00     8.29      126.    13       2.9 11 km S … https://ear…
+#>  2 2026-04-10 15:56:00     7.3       127.     9       3.3 25 km S … https://ear…
+#>  3 2026-04-10 15:25:00     6.35      127.    36       2.3 85 km S … https://ear…
+#>  4 2026-04-10 15:21:00     4.84      126.    10       2.8 113 km S… https://ear…
+#>  5 2026-04-10 15:01:00     4.95      126.    13       3.2 101 km S… https://ear…
+#>  6 2026-04-10 14:26:00     8.64      127.    26       2.4 35 km S … https://ear…
+#>  7 2026-04-10 12:47:00    16.2       120.     7       2.2 20 km N … https://ear…
+#>  8 2026-04-10 12:35:00    11.2       122.    26       1.8 11 km S … https://ear…
+#>  9 2026-04-10 12:32:00    14.1       120.    97       1.3 31 km N … https://ear…
+#> 10 2026-04-10 12:29:00     6.69      124.    22       1.9 38 km N … https://ear…
+#> # ℹ 527 more rows
 ```
 
 The output has 7 fields:
@@ -131,11 +131,13 @@ The output has 7 fields:
 - `location` - Location of the earthquake in relation to a monitoring
   station; and,
 
-- `bulletin_url` - URL for full earthquake bulletin.
+- `bulletin_url` - URL for full detailed earthquake bulletin.
 
-The default implementation of the `eq_data()` function outputs
-earthquake monitoring data for the current month of the current year. If
-data for a specific year is needed, say for example for year 2020, then:
+The default implementation of the
+[`eq_data_summary()`](https://panukatan.io/lindol/reference/eq_data.md)
+function outputs earthquake monitoring data for the current month of the
+current year. If data for a specific year is needed, say for example for
+year 2020, then:
 
 ``` r
 ## Retrieve data for all months of year 2020 ----
@@ -197,28 +199,37 @@ which provides a tibble output as follows:
 
 The output has 7 fields:
 
-- `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`) the
-  data has been retrieved from the PHIVOLCS earthquake monitoring
-  bulletins. This is basically a time stamp on when the user made a call
-  to `eq_data()`;
-
 - `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific
   earthquake was detected and recorded. This is recorded in Philippine
   Standard Time (PST);
 
-- `longitude` - Longitude (in GPS units/decimal format) coordinate of
-  the hypocentre of the detected earthquake;
+- `bulletin_number` - Integer value for the number assigned to the
+  specific bulletin;
 
-- `latitude` - Latitude (in GPS units/decimal format) coordinate of the
-  hypocentre of the detected earthquake;
+- `depth` - Integer value for the depth at which earthquake was
+  recorded;
 
-- `depth` - Depth (in kilometres units) of the hypocentre of the
-  detected earthquake;
+- `magnitude` - Numeric value for the magnitude of the earthquake;
 
-- `magnitude` - Magnitude of the earthquake; and,
+- `location` - Character value for location of the earthquake containing
+  geolocation and location based on distance from a specific town or
+  named place;
 
-- `location` - Location of the earthquake in relation to a monitoring
-  station.
+- `origin` - Character value for the origin type of the earthquake;
+
+- `reported_intensity` - Character value for reported intensity of the
+  earthquake;
+
+- `expect_damage` - Logical value for whether damages are expected from
+  the earthquake;
+
+- `expect_aftershocks` - Logical value for whether aftershocks are
+  expected;
+
+- `data_time_issued` - Date and time the bulletin was issued; and,
+
+- `prepared_by` - Character values for initials of individuals who
+  prepared the bulletin.
 
 The default implementation of the
 [`eq_data_bulletin()`](https://panukatan.io/lindol/reference/eq_data.md)

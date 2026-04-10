@@ -112,20 +112,20 @@
 <span><span class="co">## Get the current year and current month data ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_summary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>which provides a tibble output as follows:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 505 × 7</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 537 × 7</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;    date_time           latitude longitude depth magnitude location  bulletin_url</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       </span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  1 2026-04-10 00:36:00    13.7       122.    33       1.4 3 km S 6… https://ear…</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;  2 2026-04-10 00:07:00    13.7       123.    10       3.5 12 km N … https://ear…</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;  3 2026-04-10 00:01:00     8.22      127.    10       4.2 58 km N … https://ear…</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  4 2026-04-09 23:13:00    15.3       120.    34       1.4 21 km S … https://ear…</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  5 2026-04-09 23:07:00     6.17      126.    80       4.5 36 km S … https://ear…</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  6 2026-04-09 22:16:00    15.0       123.    27       1.5 54 km N … https://ear…</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  7 2026-04-09 21:46:00    14.8       120.    22       2.9 47 km S … https://ear…</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  8 2026-04-09 21:19:00    10.1       125.    12       2.4 6 km S 6… https://ear…</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  9 2026-04-09 21:18:00     9.1       127.    33       2   32 km N … https://ear…</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 10 2026-04-09 21:10:00    19.2       122.    30       1.4 14 km S … https://ear…</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 495 more rows</span></span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  1 2026-04-10 16:52:00     8.29      126.    13       2.9 11 km S … https://ear…</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;  2 2026-04-10 15:56:00     7.3       127.     9       3.3 25 km S … https://ear…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;  3 2026-04-10 15:25:00     6.35      127.    36       2.3 85 km S … https://ear…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  4 2026-04-10 15:21:00     4.84      126.    10       2.8 113 km S… https://ear…</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  5 2026-04-10 15:01:00     4.95      126.    13       3.2 101 km S… https://ear…</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  6 2026-04-10 14:26:00     8.64      127.    26       2.4 35 km S … https://ear…</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  7 2026-04-10 12:47:00    16.2       120.     7       2.2 20 km N … https://ear…</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  8 2026-04-10 12:35:00    11.2       122.    26       1.8 11 km S … https://ear…</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  9 2026-04-10 12:32:00    14.1       120.    97       1.3 31 km N … https://ear…</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 10 2026-04-10 12:29:00     6.69      124.    22       1.9 38 km N … https://ear…</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 527 more rows</span></span></code></pre></div>
 <p>The output has 7 fields:</p>
 <ul>
 <li><p><code>date_time</code> - Date and time (of type <code>POSIXct</code>/<code>POSIXt</code>) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);</p></li>
@@ -134,9 +134,9 @@
 <li><p><code>depth</code> - Depth (in kilometres units) of the hypocentre of the detected earthquake;</p></li>
 <li><p><code>magnitude</code> - Magnitude of the earthquake;</p></li>
 <li><p><code>location</code> - Location of the earthquake in relation to a monitoring station; and,</p></li>
-<li><p><code>bulletin_url</code> - URL for full earthquake bulletin.</p></li>
+<li><p><code>bulletin_url</code> - URL for full detailed earthquake bulletin.</p></li>
 </ul>
-<p>The default implementation of the <code>eq_data()</code> function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:</p>
+<p>The default implementation of the <code><a href="reference/eq_data.html">eq_data_summary()</a></code> function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Retrieve data for all months of year 2020 ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_summary</a></span><span class="op">(</span>.year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
@@ -183,13 +183,17 @@
 <span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; #   expect_aftershocks &lt;chr&gt;, date_time_issued &lt;dttm&gt;, prepared_by &lt;chr&gt;</span></span></code></pre></div>
 <p>The output has 7 fields:</p>
 <ul>
-<li><p><code>date_time_retrieved</code> - Date and time (of type <code>POSIXct</code>/<code>POSIXt</code>) the data has been retrieved from the PHIVOLCS earthquake monitoring bulletins. This is basically a time stamp on when the user made a call to <code>eq_data()</code>;</p></li>
 <li><p><code>date_time</code> - Date and time (of type <code>POSIXct</code>/<code>POSIXt</code>) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);</p></li>
-<li><p><code>longitude</code> - Longitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;</p></li>
-<li><p><code>latitude</code> - Latitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;</p></li>
-<li><p><code>depth</code> - Depth (in kilometres units) of the hypocentre of the detected earthquake;</p></li>
-<li><p><code>magnitude</code> - Magnitude of the earthquake; and,</p></li>
-<li><p><code>location</code> - Location of the earthquake in relation to a monitoring station.</p></li>
+<li><p><code>bulletin_number</code> - Integer value for the number assigned to the specific bulletin;</p></li>
+<li><p><code>depth</code> - Integer value for the depth at which earthquake was recorded;</p></li>
+<li><p><code>magnitude</code> - Numeric value for the magnitude of the earthquake;</p></li>
+<li><p><code>location</code> - Character value for location of the earthquake containing geolocation and location based on distance from a specific town or named place;</p></li>
+<li><p><code>origin</code> - Character value for the origin type of the earthquake;</p></li>
+<li><p><code>reported_intensity</code> - Character value for reported intensity of the earthquake;</p></li>
+<li><p><code>expect_damage</code> - Logical value for whether damages are expected from the earthquake;</p></li>
+<li><p><code>expect_aftershocks</code> - Logical value for whether aftershocks are expected;</p></li>
+<li><p><code>data_time_issued</code> - Date and time the bulletin was issued; and,</p></li>
+<li><p><code>prepared_by</code> - Character values for initials of individuals who prepared the bulletin.</p></li>
 </ul>
 <p>The default implementation of the <code><a href="reference/eq_data.html">eq_data_bulletin()</a></code> function outputs earthquake monitoring data for the current month of the current year. Also, the default behaviour is to perform this data extraction sequentially i.e., every earthquake record for the specified month and year combination one after the other. This approach can take long specifically for month and year combinations that have many recorded earthquakes. The <code><a href="reference/eq_data.html">eq_data_bulletin()</a></code> function includes option for parallelisation of this process by specifying the argument <code>parallel = TRUE</code> which, by default, will initiate 2 parallel processes. This can be increased (depending on the specifications of the machine being used) by specifying the <code>cores</code> argument to the desired appropriate number of processes to initiate.</p>
 <p>For example, if data for a specific year is needed, say for example for year 2019, using parallelisation using 8 parallel processes, then:</p>
