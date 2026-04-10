@@ -8,7 +8,7 @@ message: 'To cite package "lindol" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'lindol: An Interface to the PHIVOLCS Earthquake Bulletins'
-version: 0.0.0.9000
+version: 0.0.0.9001
 identifiers:
 - type: url
   value: http://panukatan.io/lindol/
@@ -30,7 +30,7 @@ preferred-citation:
   authors:
   - name: Ernest Guevarra
   year: '2026'
-  notes: R package version 0.0.9000
+  notes: R package version 0.0.9001
   url: https://panukatan.io/lindol/
 repository-code: https://github.com/panukatan/lindol
 url: https://panukatan.io/lindol/

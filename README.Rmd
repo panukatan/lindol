@@ -69,7 +69,9 @@ pak::pak("panukatan/lindol")
 
 ## Usage
 
-The main usage of `{lindol}` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins. The main functions are `eq_data_summary()` and `eq_data_bulletin()` which outputs summary and detailed earthquake information respectively. This [vignette]() describes the structure of the PHIVOLCS earthquake information bulletin webpages and the difference between the summary and bulletin earthquake information. 
+The main usage of `{lindol}` is to retrieve earthquake monitoring data from PHIVOLCS's earthquake bulletins.
+The main functions are `eq_data_summary()` and `eq_data_bulletin()` which outputs summary and detailed earthquake information respectively.
+This [vignette]() describes the structure of the PHIVOLCS earthquake information bulletin webpages and the difference between the summary and bulletin earthquake information. 
 
 ### Summary earthquake information
 
@@ -109,7 +111,8 @@ The output has 7 fields:
 
 * `bulletin_url` - URL for full detailed earthquake bulletin.
 
-The default implementation of the `eq_data_summary()` function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:
+The default implementation of the `eq_data_summary()` function outputs earthquake monitoring data for the current month of the current year.
+If data for a specific year is needed, say for example for year 2020, then:
 
 ```{r, usage-2a, eval = FALSE}
 ## Retrieve data for all months of year 2020 ----
@@ -139,7 +142,7 @@ which provides a tibble output as follows:
 eq_data_bulletin(.year = 2018, .month = "January")
 ```
 
-The output has 7 fields:
+The output has 11 fields:
 
 * `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);
 
@@ -163,7 +166,10 @@ The output has 7 fields:
 
 * `prepared_by` - Character values for initials of individuals who prepared the bulletin.
 
-The default implementation of the `eq_data_bulletin()` function outputs earthquake monitoring data for the current month of the current year. Also, the default behaviour is to perform this data extraction sequentially i.e., every earthquake record for the specified month and year combination one after the other. This approach can take long specifically for month and year combinations that have many recorded earthquakes. The `eq_data_bulletin()` function includes option for parallelisation of this process by specifying the argument `parallel = TRUE` which, by default, will initiate 2 parallel processes. This can be increased (depending on the specifications of the machine being used) by specifying the `cores` argument to the desired appropriate number of processes to initiate.
+The default implementation of the `eq_data_bulletin()` function outputs earthquake monitoring data for the current month of the current year.
+Also, the default behaviour is to perform this data extraction sequentially i.e., every earthquake record for the specified month and year combination one after the other.
+This approach can take long specifically for month and year combinations that have many recorded earthquakes. The `eq_data_bulletin()` function includes option for parallelisation of this process by specifying the argument `parallel = TRUE` which, by default, will initiate 2 parallel processes.
+This can be increased (depending on the specifications of the machine being used) by specifying the `cores` argument to the desired appropriate number of processes to initiate.
 
 For example, if data for a specific year is needed, say for example for year 2019, using parallelisation using 8 parallel processes, then:
 
@@ -189,7 +195,9 @@ citation("lindol")
 
 ## Community guidelines
 
-Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/panukatan/lindol/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://panukatan.io/lindol/CONTRIBUTING.html).
+Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/panukatan/lindol/issues).
+If you would like to contribute to the package, please see our [contributing guidelines](https://panukatan.io/lindol/CONTRIBUTING.html).
 
-This project is released with a [Contributor Code of Conduct](https://panukatan.io/lindol/CODE_OF_CONDUCT.html). By participating in this project you agree to abide by its terms.
+This project is released with a [Contributor Code of Conduct](https://panukatan.io/lindol/CODE_OF_CONDUCT.html).
+By participating in this project you agree to abide by its terms.
 
