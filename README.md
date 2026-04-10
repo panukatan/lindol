@@ -15,7 +15,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![Codecov test
 coverage](https://codecov.io/gh/panukatan/lindol/graph/badge.svg)](https://app.codecov.io/gh/panukatan/lindol)
 [![CodeFactor](https://www.codefactor.io/repository/github/panukatan/lindol/badge)](https://www.codefactor.io/repository/github/panukatan/lindol)
-[![DOI](https://zenodo.org/badge/841075120.svg)](https://zenodo.org/badge/latestdoi/841075120)
+[![DOI](https://zenodo.org/badge/841075120.svg)](https://doi.org/10.5281/zenodo.19498534)
 <!-- badges: end -->
 
 The [Philippine Institute of Volcanology and Seismology
@@ -284,8 +284,9 @@ citation("lindol")
 #> To cite lindol in publications use:
 #> 
 #>   Ernest Guevarra (2026). _lindol: An Interface to the PHIVOLCS
-#>   Earthquake Bulletins_. R package version 0.0.9001,
-#>   <https://panukatan.io/lindol/>.
+#>   Earthquake Bulletins_. doi:10.5281/zenodo.19498534
+#>   <https://doi.org/10.5281/zenodo.19498534>, R package version
+#>   0.0.9001, <https://panukatan.io/lindol/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -295,6 +296,7 @@ citation("lindol")
 #>     year = {2026},
 #>     note = {R package version 0.0.9001},
 #>     url = {https://panukatan.io/lindol/},
+#>     doi = {10.5281/zenodo.19498534},
 #>   }
 ```
 
