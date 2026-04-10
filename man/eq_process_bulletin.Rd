@@ -18,7 +18,8 @@ bulletins.
 Process earthquake information from PHIVOLCS bulletins
 }
 \examples{
-urls <- eq_get_bulletin_urls()
+.url <- eq_build_url(.year = 2018, .month = "January")
+urls <- eq_get_bulletin_links(.url)
 eq_get_bulletins(urls[1:3]) |>
   eq_process_bulletins()
 

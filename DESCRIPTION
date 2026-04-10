@@ -17,7 +17,7 @@ Description: The Philippine Institute of Volcanology and Seismology (PHIVOLCS)
   PHIVOLCS into machine-readable versions.
 License: GPL (>= 3)
 Depends: 
-    R (>= 4.1.0)
+    R (>= 4.2.0)
 Imports: 
     doParallel,
     dplyr,

@@ -1,6 +1,7 @@
 # Tests for eq_get_bulletins ---------------------------------------------------
 
-bulletin_df <- eq_get_bulletin_urls(.year = 2018) |>
+.url <- eq_build_url(.year = 2018, .month = "January")
+bulletin_df <- eq_get_bulletin_links(.url) |>
   (\(x) x[1:10])() |>
   eq_get_bulletins()
 

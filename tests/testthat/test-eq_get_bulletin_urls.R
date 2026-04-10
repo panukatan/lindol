@@ -1,19 +1,21 @@
 # Test for eq_get_bulletin_urls functions ----------------------------------------------
 
-url_list <- eq_get_bulletin_urls()
+.url <- eq_build_url(.year = 2020, .month = "January")
+url_list <- eq_get_bulletin_links(.url)
 
 test_that("get_links function outputs are as expected", {
-  expect_vector(url_list, ptype = character(), size = nrow(eq_data_summary()))
+  expect_vector(
+    url_list, ptype = character(), 
+    size = nrow(eq_data_summary(.year = 2020, .month = "January"))
+  )
 })
 
-url_list <- eq_get_bulletin_urls(latest = FALSE)
-
-test_that("get_links function outputs are as expected", {
-  expect_vector(url_list, ptype = character())
-})
-
-url_list <- eq_get_bulletin_urls(.year = 2018)
+.url <- eq_build_url(.year = 2018)
+url_list <- lapply(X = .url, eq_get_bulletin_links) |> unlist()
 
 test_that("tables are of the correct structure", {
-  expect_vector(url_list, ptype = character())
+  expect_vector(
+    url_list, ptype = character(),
+    size = nrow(eq_data_summary(.year = 2018))
+  )
 })
