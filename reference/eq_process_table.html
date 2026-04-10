@@ -22,8 +22,10 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io"><span class="fa fa-regular fa-globe fa-lg"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io" aria-label="globe"><span class="fa fa-globe fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan" aria-label="mastodon"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/panukatan/lindol/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -66,21 +68,20 @@ PHIVOLCS earthquake information monitoring HTMLs using <code>eq_get_table</code>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">eq_tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_get_table.html">eq_get_tables</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">eq_process_tables</span><span class="op">(</span><span class="va">eq_tab</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,445 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    date_time_retrieved date_time           latitude longitude depth magnitude</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">16:34:00</span>     9.85      126.    33       2.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">16:12:00</span>     9.78      126.    29       1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">15:22:00</span>    12.1       124.     4       2.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">15:20:00</span>    13.7       121.    92       1.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">14:39:00</span>    13.5       121.    36       1.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">14:33:00</span>    16.0       121.    33       2  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">14:03:00</span>     7.09      127.    18       2.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">13:51:00</span>     9.79      126.    33       2.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">13:48:00</span>     7.43      124.    32       1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2026-04-04 <span style="color: #949494;">08:56:48</span> 2026-04-04 <span style="color: #949494;">13:41:00</span>     7.09      127.    13       2.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,435 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: location &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 536 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    date_time           latitude longitude depth magnitude location  bulletin_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2026-04-10 <span style="color: #949494;">15:56:00</span>     7.3       127.     9       3.3 25 km S … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2026-04-10 <span style="color: #949494;">15:25:00</span>     6.35      127.    36       2.3 85 km S … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2026-04-10 <span style="color: #949494;">15:21:00</span>     4.84      126.    10       2.8 113 km S… https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2026-04-10 <span style="color: #949494;">15:01:00</span>     4.95      126.    13       3.2 101 km S… https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2026-04-10 <span style="color: #949494;">14:26:00</span>     8.64      127.    26       2.4 35 km S … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2026-04-10 <span style="color: #949494;">12:47:00</span>    16.2       120.     7       2.2 20 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2026-04-10 <span style="color: #949494;">12:35:00</span>    11.2       122.    26       1.8 11 km S … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2026-04-10 <span style="color: #949494;">12:32:00</span>    14.1       120.    97       1.3 31 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2026-04-10 <span style="color: #949494;">12:29:00</span>     6.69      124.    22       1.9 38 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2026-04-10 <span style="color: #949494;">10:28:00</span>     7.37      127.    11       2.3 27 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 526 more rows</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

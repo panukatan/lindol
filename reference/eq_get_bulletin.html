@@ -22,8 +22,10 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io"><span class="fa fa-regular fa-globe fa-lg"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io" aria-label="globe"><span class="fa fa-globe fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan" aria-label="mastodon"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/panukatan/lindol/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -64,14 +66,15 @@ information bulletins</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">urls</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_get_bulletin_urls.html">eq_get_bulletin_urls</a></span><span class="op">(</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">.url</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_build_url.html">eq_build_url</a></span><span class="op">(</span>.year <span class="op">=</span> <span class="fl">2023</span>, .month <span class="op">=</span> <span class="st">"January"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">urls</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_get_bulletin_link.html">eq_get_bulletin_links</a></span><span class="op">(</span><span class="va">.url</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">eq_get_bulletins</span><span class="op">(</span><span class="va">urls</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   date_time   bulletin_number depth magnitude location origin reported_intensity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 04 Apr 202… 1               033   Ms 2.4    09.85°N… TECTO… This is an afters…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 04 Apr 202… 1               029   Ms 1.5    09.78°N… TECTO… This is an afters…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 04 Apr 202… 1               004   Ms 2.8    12.14°N… TECTO… Instrumental Inte…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 31 Jan 202… 2               043   Ms 3.2    08.39°N… TECTO… <span style="color: #949494;">""</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 31 Jan 202… 2               031   Ms 2.0    07.88°N… TECTO… <span style="color: #949494;">""</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 31 Jan 202… 2               064   Ms 2.0    05.76°N… TECTO… <span style="color: #949494;">""</span>                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: expect_damage &lt;chr&gt;, expect_aftershocks &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   date_time_issued &lt;chr&gt;, prepared_by &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>

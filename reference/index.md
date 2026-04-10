@@ -11,10 +11,9 @@
   [`eq_get_table()`](https://panukatan.io/lindol/reference/eq_get_table.md)
   : Get earthquake monitoring information from PHIVOLCS earthquake
   bulletin HTMLs
-- [`eq_get_bulletin_urls()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  [`eq_get_bulletin_urls_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  [`eq_get_bulletin_url_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  : Get PHIVOLCS earthquake information bulletins
+- [`eq_get_bulletin_link()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  [`eq_get_bulletin_links()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  : Get URLs for detailed PHIVOLCS earthquake information bulletins
 - [`eq_get_bulletin()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   [`eq_get_bulletins()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   : Retrieve raw information from PHIVOLCS earthquake information

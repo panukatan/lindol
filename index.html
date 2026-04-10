@@ -47,8 +47,11 @@
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io"><span class="fa fa-regular fa-globe fa-lg"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io" aria-label="globe"><span class="fa fa-globe fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan" aria-label="mastodon"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/panukatan/lindol/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
@@ -109,51 +112,49 @@
 <span><span class="co">## Get the current year and current month data ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_summary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>which provides a tibble output as follows:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1,441 × 7</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;    date_time_retrieved date_time           latitude longitude depth magnitude</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;              &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  1 2026-04-04 08:17:46 2026-04-04 14:39:00    13.5       121.    36       1.4</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;  2 2026-04-04 08:17:46 2026-04-04 14:33:00    16.0       121.    33       2  </span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;  3 2026-04-04 08:17:46 2026-04-04 14:03:00     7.09      127.    18       2.3</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  4 2026-04-04 08:17:46 2026-04-04 13:51:00     9.79      126.    33       2.1</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  5 2026-04-04 08:17:46 2026-04-04 13:48:00     7.43      124.    32       1.5</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  6 2026-04-04 08:17:46 2026-04-04 13:41:00     7.09      127.    13       2.5</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  7 2026-04-04 08:17:46 2026-04-04 13:35:00     8.95      126.    40       2.2</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  8 2026-04-04 08:17:46 2026-04-04 11:26:00     6.96      125.    33       1.5</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  9 2026-04-04 08:17:46 2026-04-04 09:47:00    18         122.    22       2.5</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 10 2026-04-04 08:17:46 2026-04-04 08:15:00     8.61      126.    27       1.4</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 1,431 more rows</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: location &lt;chr&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 505 × 7</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;    date_time           latitude longitude depth magnitude location  bulletin_url</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       </span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  1 2026-04-10 00:36:00    13.7       122.    33       1.4 3 km S 6… https://ear…</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;  2 2026-04-10 00:07:00    13.7       123.    10       3.5 12 km N … https://ear…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;  3 2026-04-10 00:01:00     8.22      127.    10       4.2 58 km N … https://ear…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  4 2026-04-09 23:13:00    15.3       120.    34       1.4 21 km S … https://ear…</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  5 2026-04-09 23:07:00     6.17      126.    80       4.5 36 km S … https://ear…</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  6 2026-04-09 22:16:00    15.0       123.    27       1.5 54 km N … https://ear…</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;  7 2026-04-09 21:46:00    14.8       120.    22       2.9 47 km S … https://ear…</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;  8 2026-04-09 21:19:00    10.1       125.    12       2.4 6 km S 6… https://ear…</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;  9 2026-04-09 21:18:00     9.1       127.    33       2   32 km N … https://ear…</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 10 2026-04-09 21:10:00    19.2       122.    30       1.4 14 km S … https://ear…</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 495 more rows</span></span></code></pre></div>
 <p>The output has 7 fields:</p>
 <ul>
-<li><p><code>date_time_retrieved</code> - Date and time (of type <code>POSIXct</code>/<code>POSIXt</code>) the data has been retrieved from the PHIVOLCS earthquake monitoring bulletins. This is basically a time stamp on when the user made a call to <code>eq_data()</code>;</p></li>
 <li><p><code>date_time</code> - Date and time (of type <code>POSIXct</code>/<code>POSIXt</code>) the specific earthquake was detected and recorded. This is recorded in Philippine Standard Time (PST);</p></li>
 <li><p><code>longitude</code> - Longitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;</p></li>
 <li><p><code>latitude</code> - Latitude (in GPS units/decimal format) coordinate of the hypocentre of the detected earthquake;</p></li>
 <li><p><code>depth</code> - Depth (in kilometres units) of the hypocentre of the detected earthquake;</p></li>
-<li><p><code>magnitude</code> - Magnitude of the earthquake; and,</p></li>
-<li><p><code>location</code> - Location of the earthquake in relation to a monitoring station.</p></li>
+<li><p><code>magnitude</code> - Magnitude of the earthquake;</p></li>
+<li><p><code>location</code> - Location of the earthquake in relation to a monitoring station; and,</p></li>
+<li><p><code>bulletin_url</code> - URL for full earthquake bulletin.</p></li>
 </ul>
 <p>The default implementation of the <code>eq_data()</code> function outputs earthquake monitoring data for the current month of the current year. If data for a specific year is needed, say for example for year 2020, then:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Retrieve data for all months of year 2020 ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_summary</a></span><span class="op">(</span>.year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 <p>which gives:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,047 × 7</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt;    date_time_retrieved date_time           latitude longitude depth magnitude</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;              &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;  1 2026-04-04 08:17:48 2020-01-31 23:50:00     6.56      125.    12       2.2</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt;  2 2026-04-04 08:17:48 2020-01-31 23:46:00     6.58      125.     9       2.1</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt;  3 2026-04-04 08:17:48 2020-01-31 23:02:00     8.59      127.    13       3.2</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;  4 2026-04-04 08:17:48 2020-01-31 22:34:00     6.62      125.    13       3.6</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;  5 2026-04-04 08:17:48 2020-01-31 21:18:00     6.57      125.    16       2.8</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  6 2026-04-04 08:17:48 2020-01-31 21:17:00    10.2       126.    18       2.9</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt;  7 2026-04-04 08:17:48 2020-01-31 19:35:00     6.58      125.    17       3.1</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt;  8 2026-04-04 08:17:48 2020-01-31 19:18:00     6.59      125.    13       4.9</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt;  9 2026-04-04 08:17:48 2020-01-31 17:46:00    10.5       126.     3       3.5</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 10 2026-04-04 08:17:48 2020-01-31 15:42:00     5.22      126.    37       3.1</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 14,037 more rows</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: location &lt;chr&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,095 × 7</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt;    date_time           latitude longitude depth magnitude location  bulletin_url</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;       </span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;  1 2020-01-31 23:50:00     6.56      125.    12       2.2 11 km S … https://ear…</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt;  2 2020-01-31 23:46:00     6.58      125.     9       2.1 10 km S … https://ear…</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt;  3 2020-01-31 23:02:00     8.59      127.    13       3.2 49 km N … https://ear…</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;  4 2020-01-31 22:34:00     6.62      125.    13       3.6 7 km S 5… https://ear…</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;  5 2020-01-31 21:18:00     6.57      125.    16       2.8 10 km S … https://ear…</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  6 2020-01-31 21:17:00    10.2       126.    18       2.9 24 km N … https://ear…</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt;  7 2020-01-31 19:35:00     6.58      125.    17       3.1 8 km S 0… https://ear…</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt;  8 2020-01-31 19:18:00     6.59      125.    13       4.9 15 km S … https://ear…</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt;  9 2020-01-31 17:46:00    10.5       126.     3       3.5 67 km N … https://ear…</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 10 2020-01-31 15:42:00     5.22      126.    37       3.1 77 km S … https://ear…</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 14,085 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="detailed-earthquake-information">Detailed earthquake information<a class="anchor" aria-label="anchor" href="#detailed-earthquake-information"></a>
@@ -163,7 +164,7 @@
 <code class="sourceCode R"><span><span class="co">## Get the current year and current month detailed data ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_bulletin</a></span><span class="op">(</span>.year <span class="op">=</span> <span class="fl">2018</span>, .month <span class="op">=</span> <span class="st">"January"</span><span class="op">)</span></span></code></pre></div>
 <p>which provides a tibble output as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 372 × 14</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 364 × 14</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt;    date_time           bulletin_number longitude latitude depth magnitude</span></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                        &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;     &lt;dbl&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;  1 2018-01-31 23:07:37               2     13.2      125.    25       2.8</span></span>
@@ -176,7 +177,7 @@
 <span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;  8 2018-01-30 22:11:51               3     19.3      121.    15       4.9</span></span>
 <span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt;  9 2018-01-30 21:40:42               2     18.4      121.     8       3.1</span></span>
 <span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 10 2018-01-30 19:55:22               2     17.0      121.    20       2.6</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 362 more rows</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 354 more rows</span></span>
 <span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 8 more variables: magnitude_type &lt;chr&gt;, reported_intensity &lt;chr&gt;,</span></span>
 <span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; #   location &lt;chr&gt;, origin &lt;chr&gt;, expect_damage &lt;chr&gt;,</span></span>
 <span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; #   expect_aftershocks &lt;chr&gt;, date_time_issued &lt;dttm&gt;, prepared_by &lt;chr&gt;</span></span></code></pre></div>
@@ -196,7 +197,7 @@
 <code class="sourceCode R"><span><span class="co">## Retrieve data for all months of year 2024 using parallelisation ----</span></span>
 <span><span class="fu"><a href="reference/eq_data.html">eq_data_bulletin</a></span><span class="op">(</span>.year <span class="op">=</span> <span class="fl">2019</span>, parallel <span class="op">=</span> <span class="cn">TRUE</span>, cores <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
 <p>which gives:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 12,655 × 14</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 12,977 × 14</span></span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt;    date_time           bulletin_number longitude latitude depth magnitude</span></span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                        &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;     &lt;dbl&gt;</span></span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;  1 2019-01-31 14:55:06               2      9.64     122.     6       2.7</span></span>
@@ -209,7 +210,7 @@
 <span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  8 2019-01-31 05:02:56               2     10.6      125.    27       2.3</span></span>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;  9 2019-01-31 04:37:24               2     10.4      125.    26       2.2</span></span>
 <span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; 10 2019-01-31 04:06:29               2      9.77     126.    14       2.1</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 12,645 more rows</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 12,967 more rows</span></span>
 <span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 8 more variables: magnitude_type &lt;chr&gt;, reported_intensity &lt;chr&gt;,</span></span>
 <span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; #   location &lt;chr&gt;, origin &lt;chr&gt;, expect_damage &lt;chr&gt;,</span></span>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; #   expect_aftershocks &lt;chr&gt;, date_time_issued &lt;dttm&gt;, prepared_by &lt;chr&gt;</span></span></code></pre></div>

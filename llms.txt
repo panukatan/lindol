@@ -95,29 +95,23 @@ eq_data_summary()
 which provides a tibble output as follows:
 
 ``` R
-#> # A tibble: 1,441 × 7
-#>    date_time_retrieved date_time           latitude longitude depth magnitude
-#>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
-#>  1 2026-04-04 08:17:46 2026-04-04 14:39:00    13.5       121.    36       1.4
-#>  2 2026-04-04 08:17:46 2026-04-04 14:33:00    16.0       121.    33       2  
-#>  3 2026-04-04 08:17:46 2026-04-04 14:03:00     7.09      127.    18       2.3
-#>  4 2026-04-04 08:17:46 2026-04-04 13:51:00     9.79      126.    33       2.1
-#>  5 2026-04-04 08:17:46 2026-04-04 13:48:00     7.43      124.    32       1.5
-#>  6 2026-04-04 08:17:46 2026-04-04 13:41:00     7.09      127.    13       2.5
-#>  7 2026-04-04 08:17:46 2026-04-04 13:35:00     8.95      126.    40       2.2
-#>  8 2026-04-04 08:17:46 2026-04-04 11:26:00     6.96      125.    33       1.5
-#>  9 2026-04-04 08:17:46 2026-04-04 09:47:00    18         122.    22       2.5
-#> 10 2026-04-04 08:17:46 2026-04-04 08:15:00     8.61      126.    27       1.4
-#> # ℹ 1,431 more rows
-#> # ℹ 1 more variable: location <chr>
+#> # A tibble: 505 × 7
+#>    date_time           latitude longitude depth magnitude location  bulletin_url
+#>    <dttm>                 <dbl>     <dbl> <dbl>     <dbl> <chr>     <chr>       
+#>  1 2026-04-10 00:36:00    13.7       122.    33       1.4 3 km S 6… https://ear…
+#>  2 2026-04-10 00:07:00    13.7       123.    10       3.5 12 km N … https://ear…
+#>  3 2026-04-10 00:01:00     8.22      127.    10       4.2 58 km N … https://ear…
+#>  4 2026-04-09 23:13:00    15.3       120.    34       1.4 21 km S … https://ear…
+#>  5 2026-04-09 23:07:00     6.17      126.    80       4.5 36 km S … https://ear…
+#>  6 2026-04-09 22:16:00    15.0       123.    27       1.5 54 km N … https://ear…
+#>  7 2026-04-09 21:46:00    14.8       120.    22       2.9 47 km S … https://ear…
+#>  8 2026-04-09 21:19:00    10.1       125.    12       2.4 6 km S 6… https://ear…
+#>  9 2026-04-09 21:18:00     9.1       127.    33       2   32 km N … https://ear…
+#> 10 2026-04-09 21:10:00    19.2       122.    30       1.4 14 km S … https://ear…
+#> # ℹ 495 more rows
 ```
 
 The output has 7 fields:
-
-- `date_time_retrieved` - Date and time (of type `POSIXct`/`POSIXt`) the
-  data has been retrieved from the PHIVOLCS earthquake monitoring
-  bulletins. This is basically a time stamp on when the user made a call
-  to `eq_data()`;
 
 - `date_time` - Date and time (of type `POSIXct`/`POSIXt`) the specific
   earthquake was detected and recorded. This is recorded in Philippine
@@ -132,10 +126,12 @@ The output has 7 fields:
 - `depth` - Depth (in kilometres units) of the hypocentre of the
   detected earthquake;
 
-- `magnitude` - Magnitude of the earthquake; and,
+- `magnitude` - Magnitude of the earthquake;
 
 - `location` - Location of the earthquake in relation to a monitoring
-  station.
+  station; and,
+
+- `bulletin_url` - URL for full earthquake bulletin.
 
 The default implementation of the `eq_data()` function outputs
 earthquake monitoring data for the current month of the current year. If
@@ -149,21 +145,20 @@ eq_data_summary(.year = 2020)
 which gives:
 
 ``` R
-#> # A tibble: 14,047 × 7
-#>    date_time_retrieved date_time           latitude longitude depth magnitude
-#>    <dttm>              <dttm>                 <dbl>     <dbl> <dbl>     <dbl>
-#>  1 2026-04-04 08:17:48 2020-01-31 23:50:00     6.56      125.    12       2.2
-#>  2 2026-04-04 08:17:48 2020-01-31 23:46:00     6.58      125.     9       2.1
-#>  3 2026-04-04 08:17:48 2020-01-31 23:02:00     8.59      127.    13       3.2
-#>  4 2026-04-04 08:17:48 2020-01-31 22:34:00     6.62      125.    13       3.6
-#>  5 2026-04-04 08:17:48 2020-01-31 21:18:00     6.57      125.    16       2.8
-#>  6 2026-04-04 08:17:48 2020-01-31 21:17:00    10.2       126.    18       2.9
-#>  7 2026-04-04 08:17:48 2020-01-31 19:35:00     6.58      125.    17       3.1
-#>  8 2026-04-04 08:17:48 2020-01-31 19:18:00     6.59      125.    13       4.9
-#>  9 2026-04-04 08:17:48 2020-01-31 17:46:00    10.5       126.     3       3.5
-#> 10 2026-04-04 08:17:48 2020-01-31 15:42:00     5.22      126.    37       3.1
-#> # ℹ 14,037 more rows
-#> # ℹ 1 more variable: location <chr>
+#> # A tibble: 14,095 × 7
+#>    date_time           latitude longitude depth magnitude location  bulletin_url
+#>    <dttm>                 <dbl>     <dbl> <dbl>     <dbl> <chr>     <chr>       
+#>  1 2020-01-31 23:50:00     6.56      125.    12       2.2 11 km S … https://ear…
+#>  2 2020-01-31 23:46:00     6.58      125.     9       2.1 10 km S … https://ear…
+#>  3 2020-01-31 23:02:00     8.59      127.    13       3.2 49 km N … https://ear…
+#>  4 2020-01-31 22:34:00     6.62      125.    13       3.6 7 km S 5… https://ear…
+#>  5 2020-01-31 21:18:00     6.57      125.    16       2.8 10 km S … https://ear…
+#>  6 2020-01-31 21:17:00    10.2       126.    18       2.9 24 km N … https://ear…
+#>  7 2020-01-31 19:35:00     6.58      125.    17       3.1 8 km S 0… https://ear…
+#>  8 2020-01-31 19:18:00     6.59      125.    13       4.9 15 km S … https://ear…
+#>  9 2020-01-31 17:46:00    10.5       126.     3       3.5 67 km N … https://ear…
+#> 10 2020-01-31 15:42:00     5.22      126.    37       3.1 77 km S … https://ear…
+#> # ℹ 14,085 more rows
 ```
 
 ### Detailed earthquake information
@@ -181,7 +176,7 @@ eq_data_bulletin(.year = 2018, .month = "January")
 which provides a tibble output as follows:
 
 ``` R
-#> # A tibble: 372 × 14
+#> # A tibble: 364 × 14
 #>    date_time           bulletin_number longitude latitude depth magnitude
 #>    <dttm>                        <int>     <dbl>    <dbl> <int>     <dbl>
 #>  1 2018-01-31 23:07:37               2     13.2      125.    25       2.8
@@ -194,7 +189,7 @@ which provides a tibble output as follows:
 #>  8 2018-01-30 22:11:51               3     19.3      121.    15       4.9
 #>  9 2018-01-30 21:40:42               2     18.4      121.     8       3.1
 #> 10 2018-01-30 19:55:22               2     17.0      121.    20       2.6
-#> # ℹ 362 more rows
+#> # ℹ 354 more rows
 #> # ℹ 8 more variables: magnitude_type <chr>, reported_intensity <chr>,
 #> #   location <chr>, origin <chr>, expect_damage <chr>,
 #> #   expect_aftershocks <chr>, date_time_issued <dttm>, prepared_by <chr>
@@ -251,7 +246,7 @@ eq_data_bulletin(.year = 2019, parallel = TRUE, cores = 8)
 which gives:
 
 ``` R
-#> # A tibble: 12,655 × 14
+#> # A tibble: 12,977 × 14
 #>    date_time           bulletin_number longitude latitude depth magnitude
 #>    <dttm>                        <int>     <dbl>    <dbl> <int>     <dbl>
 #>  1 2019-01-31 14:55:06               2      9.64     122.     6       2.7
@@ -264,7 +259,7 @@ which gives:
 #>  8 2019-01-31 05:02:56               2     10.6      125.    27       2.3
 #>  9 2019-01-31 04:37:24               2     10.4      125.    26       2.2
 #> 10 2019-01-31 04:06:29               2      9.77     126.    14       2.1
-#> # ℹ 12,645 more rows
+#> # ℹ 12,967 more rows
 #> # ℹ 8 more variables: magnitude_type <chr>, reported_intensity <chr>,
 #> #   location <chr>, origin <chr>, expect_damage <chr>,
 #> #   expect_aftershocks <chr>, date_time_issued <dttm>, prepared_by <chr>
@@ -320,10 +315,9 @@ participating in this project you agree to abide by its terms.
   [`eq_get_table()`](https://panukatan.io/lindol/reference/eq_get_table.md)
   : Get earthquake monitoring information from PHIVOLCS earthquake
   bulletin HTMLs
-- [`eq_get_bulletin_urls()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  [`eq_get_bulletin_urls_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  [`eq_get_bulletin_url_()`](https://panukatan.io/lindol/reference/eq_get_bulletin_urls.md)
-  : Get PHIVOLCS earthquake information bulletins
+- [`eq_get_bulletin_link()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  [`eq_get_bulletin_links()`](https://panukatan.io/lindol/reference/eq_get_bulletin_link.md)
+  : Get URLs for detailed PHIVOLCS earthquake information bulletins
 - [`eq_get_bulletin()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   [`eq_get_bulletins()`](https://panukatan.io/lindol/reference/eq_get_bulletin.md)
   : Retrieve raw information from PHIVOLCS earthquake information

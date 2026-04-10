@@ -22,8 +22,10 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io"><span class="fa fa-regular fa-globe fa-lg"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://panukatan.io" aria-label="globe"><span class="fa fa-globe fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://mastodon.social/@panukatan" aria-label="mastodon"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/panukatan/lindol/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -80,105 +82,106 @@ all months are used.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">eq_build_url</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [12] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [14] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [18] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [24] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [26] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [30] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [32] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [35] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [36] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [38] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [39] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [40] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [41] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [42] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [43] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [44] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [45] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [46] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [47] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [48] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [49] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [50] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [51] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [52] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [53] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [54] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [55] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [56] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [58] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [59] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [60] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [62] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [63] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [64] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [65] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [66] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [67] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [68] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [69] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [70] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [71] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [72] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [73] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [74] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [75] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [76] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [77] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [78] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [79] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [80] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [81] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [82] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [83] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [84] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [85] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [86] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [87] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_March.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [88] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_April.html"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [89] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_May.html"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [90] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_June.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [91] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_July.html"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [92] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_August.html"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [93] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_September.html"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [94] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_October.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [95] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_November.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [96] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_December.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [97] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2026/2026_January.html"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [98] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2026/2026_February.html" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [99] "https://earthquake.phivolcs.dost.gov.ph/"                                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [6] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [7] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [8] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [10] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [11] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [12] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2018/2018_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [14] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [15] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [16] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [18] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [20] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [22] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [23] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [24] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2019/2019_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [26] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [27] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [28] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [30] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [31] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [32] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [34] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [35] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [36] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2020/2020_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [38] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [39] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [40] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [42] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [44] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [46] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [47] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [48] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2021/2021_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [50] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [52] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [54] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [56] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [58] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [59] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [60] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2022/2022_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [62] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [63] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [64] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [66] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [67] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [68] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [70] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [71] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [72] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [74] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [76] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [78] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [79] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [80] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [82] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [83] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [84] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2024/2024_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [86] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [87] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [88] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_April.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_May.html"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [90] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_June.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_July.html"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [92] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_August.html"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_September.html"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [94] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_October.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [95] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_November.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [96] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2025/2025_December.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2026/2026_January.html"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [98] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2026/2026_February.html" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [99] "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2026/2026_March.html"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [100] "https://earthquake.phivolcs.dost.gov.ph/"                                         </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
