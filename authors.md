@@ -8,10 +8,12 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/panukatan/lindol/blob/v0.0.0.9001/inst/CITATION)
+[`inst/CITATION`](https://github.com/panukatan/lindol/blob/main/inst/CITATION)
 
 Ernest Guevarra (2026). *lindol: An Interface to the PHIVOLCS Earthquake
-Bulletins*. R package version 0.0.9001, <https://panukatan.io/lindol/>.
+Bulletins*.
+[doi:10.5281/zenodo.19498534](https://doi.org/10.5281/zenodo.19498534),
+R package version 0.0.9001, <https://panukatan.io/lindol/>.
 
     @Manual{,
       title = {lindol: An Interface to the PHIVOLCS Earthquake Bulletins},
@@ -19,4 +21,5 @@ Bulletins*. R package version 0.0.9001, <https://panukatan.io/lindol/>.
       year = {2026},
       note = {R package version 0.0.9001},
       url = {https://panukatan.io/lindol/},
+      doi = {10.5281/zenodo.19498534},
     }

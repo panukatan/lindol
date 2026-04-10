@@ -35,7 +35,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Get earthquake monitoring information from PHIVOLCS earthquake bulletin HTMLs</h1>
-      <small class="dont-index">Source: <a href="https://github.com/panukatan/lindol/blob/v0.0.0.9001/R/eq_get.R" class="external-link"><code>R/eq_get.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/panukatan/lindol/blob/main/R/eq_get.R" class="external-link"><code>R/eq_get.R</code></a></small>
       <div class="d-none name"><code>eq_get_table.Rd</code></div>
     </div>
 
@@ -94,20 +94,20 @@ retrieved.</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">eq_get_tables</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 545 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 546 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    `Date - Time(Philippine Time)` Latitude\n           …¹ Longitude\n         …²</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10 April 2026 - 09:21 PM       07.43                   122.68                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10 April 2026 - 09:10 PM       13.73                   120.55                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10 April 2026 - 08:48 PM       07.67                   126.74                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10 April 2026 - 08:30 PM       17.59                   120.53                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10 April 2026 - 08:00 PM       16.74                   119.88                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10 April 2026 - 07:01 PM       16.83                   120.35                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10 April 2026 - 06:08 PM       17.91                   120.57                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10 April 2026 - 05:14 PM       08.92                   126.51                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10 April 2026 - 04:52 PM       08.29                   125.96                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10 April 2026 - 03:56 PM       07.30                   126.79                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 535 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10 April 2026 - 11:00 PM       17.36                   120.32                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 10 April 2026 - 09:21 PM       07.43                   122.68                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 10 April 2026 - 09:10 PM       13.73                   120.55                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 10 April 2026 - 08:48 PM       07.67                   126.74                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 10 April 2026 - 08:30 PM       17.59                   120.53                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 10 April 2026 - 08:00 PM       16.74                   119.88                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 10 April 2026 - 07:01 PM       16.83                   120.35                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10 April 2026 - 06:08 PM       17.91                   120.57                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10 April 2026 - 05:14 PM       08.92                   126.51                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10 April 2026 - 04:52 PM       08.29                   125.96                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 536 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated names: ¹​`Latitude\n              (ºN)`,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ²​`Longitude\n              (ºE)`</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: `Depth\n              (km)` &lt;chr&gt;, Mag &lt;chr&gt;,</span></span>
