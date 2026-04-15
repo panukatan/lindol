@@ -68,20 +68,20 @@ PHIVOLCS earthquake information monitoring HTMLs using <code>eq_get_table</code>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">eq_tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="eq_get_table.html">eq_get_tables</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">eq_process_tables</span><span class="op">(</span><span class="va">eq_tab</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 546 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 799 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    date_time           latitude longitude depth magnitude location  bulletin_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2026-04-10 <span style="color: #949494;">23:00:00</span>    17.4       120.    26       2.3 14 km N … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2026-04-10 <span style="color: #949494;">21:21:00</span>     7.43      123.    23       1.4 14 km S … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2026-04-10 <span style="color: #949494;">21:10:00</span>    13.7       121.   107       2.2 15 km S … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2026-04-10 <span style="color: #949494;">20:48:00</span>     7.67      127.    23       2.2 22 km N … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2026-04-10 <span style="color: #949494;">20:30:00</span>    17.6       121.     9       2.1 4 km N 6… https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2026-04-10 <span style="color: #949494;">20:00:00</span>    16.7       120.    22       4   38 km N … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2026-04-10 <span style="color: #949494;">19:01:00</span>    16.8       120.    93       1.9 4 km S 5… https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2026-04-10 <span style="color: #949494;">18:08:00</span>    17.9       121.    27       1.7 7 km S 4… https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2026-04-10 <span style="color: #949494;">17:14:00</span>     8.92      127.    33       2.1 23 km N … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2026-04-10 <span style="color: #949494;">16:52:00</span>     8.29      126.    13       2.9 11 km S … https://ear…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 536 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2026-04-15 <span style="color: #949494;">17:47:00</span>    13.4       120.     3       2.1 21 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2026-04-15 <span style="color: #949494;">15:51:00</span>    16.8       121.    34       1.4 2 km S 3… https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2026-04-15 <span style="color: #949494;">15:34:00</span>    15.0       122.    16       2.2 17 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2026-04-15 <span style="color: #949494;">15:32:00</span>    13.2       124.    55       2.4 36 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2026-04-15 <span style="color: #949494;">15:29:00</span>    14.2       120.    83       2.1 25 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2026-04-15 <span style="color: #949494;">14:25:00</span>    16.2       120.    31       1.8 35 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2026-04-15 <span style="color: #949494;">13:56:00</span>    14.8       122.    31       1.5 13 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2026-04-15 <span style="color: #949494;">13:31:00</span>     9.07      126.    31       2.3 19 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2026-04-15 <span style="color: #949494;">13:00:00</span>    15.0       122.    10       4.1 25 km N … https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2026-04-15 <span style="color: #949494;">11:57:00</span>    10.4       123.    14       2   5 km N 0… https://ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 789 more rows</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
