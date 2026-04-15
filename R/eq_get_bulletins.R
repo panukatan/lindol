@@ -42,8 +42,13 @@ eq_get_bulletin <- function(.url) {
       string = .url, pattern = paste(month.name, collapse = "|")
     )
 
-    eq_df <- eq_data_summary(.year = .year, .month = .month) |>
-      dplyr::filter(.data$bulletin_url == .url)
+    if (!is.na(.year) & !is.na(.month)) {
+      eq_df <- eq_data_summary(.year = .year, .month = .month) |>
+        dplyr::filter(.data$bulletin_url == .url)
+    } else {
+      eq_df <- eq_data_summary() |>
+        dplyr::filter(.data$bulletin_url == .url)
+    }
 
     tibble::tibble(
       date_time = as.character(eq_df$date_time),
